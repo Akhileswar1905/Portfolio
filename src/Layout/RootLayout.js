@@ -6,11 +6,21 @@ const RootLayout = () => {
       <header>
         <nav>
           <div className="links">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="about">About</NavLink>
-            <NavLink to="Resume">Resume</NavLink>
-            <NavLink to="projects">My Projects</NavLink>
-            <NavLink to="contact">Contact Me</NavLink>
+            <NavLink className={"link"} to="/">
+              Home
+            </NavLink>
+            <NavLink className={"link"} to="about">
+              About
+            </NavLink>
+            <NavLink className={"link"} to="Resume">
+              Resume
+            </NavLink>
+            <NavLink className={"link"} to="projects">
+              My Projects
+            </NavLink>
+            <NavLink className={"link"} to="contact">
+              Contact Me
+            </NavLink>
           </div>
         </nav>
       </header>
