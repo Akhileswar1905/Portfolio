@@ -12,18 +12,18 @@ const About = () => {
       <h1>Intro</h1>
       <div className="intro">
         <p>
-          Hi Everyone, Iam <span>Akhileswar Sathivada</span> from{" "}
+          Hi Everyone, I am <span>Akhileswar Sathivada</span> from{" "}
           <span>Hyderabad</span>
         </p>
         <p>
-          Iam a Tech Geek pursuring Computer Science with specialization in AIML
-          in GRIET, Hyderabad.
+          I am a Tech Geek pursuring Computer Science with specialization in
+          AIML in GRIET, Hyderabad.
         </p>
         <p>
           Apart from coding, I love to watch anime and spend time with my family
         </p>
         <p className="quote">
-          "When You Forget About the Outcomes You Become Unstoppable"
+          "When You Forget About The Outcomes, You Become Unstoppable"
           <br />
           -Akhileswar
         </p>
@@ -34,7 +34,7 @@ const About = () => {
         <div className="layout">
           <img src={html} alt="" />
           <div className="box">
-            <p>Level</p>
+            <p>Proficiency</p>
             <p className="level">85%</p>
           </div>
         </div>
@@ -42,7 +42,7 @@ const About = () => {
         <div className="layout">
           <img src={css} alt="" />
           <div className="box">
-            <p>Level</p>
+            <p>Proficiency</p>
             <p className="level">85%</p>
           </div>
         </div>
@@ -51,7 +51,7 @@ const About = () => {
           <img src={js} alt="" />
 
           <div className="box">
-            <p>Level</p>
+            <p>Proficiency</p>
             <p className="level">70%</p>
           </div>
         </div>
@@ -60,7 +60,7 @@ const About = () => {
           <img src={react} alt="" />
 
           <div className="box">
-            <p>Level</p>
+            <p>Proficiency</p>
             <p className="level">60%</p>
           </div>
         </div>
@@ -69,7 +69,7 @@ const About = () => {
           <img src={py} alt="" />
 
           <div className="box">
-            <p>Level</p>
+            <p>Proficiency</p>
             <p className="level">90%</p>
           </div>
         </div>
@@ -77,7 +77,7 @@ const About = () => {
           <img src={pylib} alt="" />
 
           <div className="box">
-            <p>Level</p>
+            <p>Proficiency</p>
             <p className="level">60%</p>
           </div>
         </div>
@@ -86,7 +86,7 @@ const About = () => {
           <img src={java} alt="" />
 
           <div className="box">
-            <p>Level</p>
+            <p>Proficiency</p>
             <p className="level">70%</p>
           </div>
         </div>
@@ -95,7 +95,7 @@ const About = () => {
           <img src={c} alt="" />
 
           <div className="box">
-            <p>Level</p>
+            <p>Proficiency</p>
             <p className="level">87%</p>
           </div>
         </div>

@@ -236,6 +236,10 @@ h1 {
   justify-content: center;
 }
 
+.resume:hover {
+  width: 75%;
+}
+
 /* Media Query for home page */
 
 @media screen and (max-width: 1440px) {
