@@ -467,10 +467,13 @@ h1 {
     font-size: 1.5rem;
   }
   .info p {
-    font-size: 0.65rem;
+    font-size: 0.95rem;
     margin: 5px;
   }
   .project img {
     width: 175px;
+  }
+  .project {
+    height: 50vh;
   }
 }
