@@ -9,9 +9,6 @@ const Contact = () => {
       <p>
         My Email : <span>akhileswarsathivada@gmail.com</span>{" "}
       </p>
-      <p>
-        My Contact Number :<span>+91 7075971917</span>
-      </p>
 
       <center>
         <h1>Find Me on</h1>
