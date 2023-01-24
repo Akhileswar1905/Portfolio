@@ -21,7 +21,7 @@ const Projects = () => {
           </div>
           <div className="btns">
             <a
-              href={"https://akhileswar1905.github.io/LearnCode/"}
+              href={"https://learncode-fun.vercel.app/"}
               target={"_blank"}
               rel="noreferrer"
             >
