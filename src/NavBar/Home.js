@@ -12,7 +12,7 @@ const Home = () => {
           problem-solving and learning. I'm always looking for new challenges
           and opportunities to grow both professionally and personally. I'm
           currently pursuing a degree in Computer Science with a focus on
-          Machine Learning and Web Development, Artificial Intelligence.
+          Machine Learning , Artificial Intelligence and Web Development.
         </p>
         <div className="icons">
           <a href="https://www.linkedin.com/in/akhileswar-sathivada-243b66237/">
