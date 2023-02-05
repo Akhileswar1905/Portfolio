@@ -1,5 +1,5 @@
 import project1 from "../LearnCode.png";
-import project2 from "../MusicPlayer.png";
+import project2 from "../project2.png";
 
 const Projects = () => {
   return (
@@ -49,7 +49,7 @@ const Projects = () => {
           </div>
           <div className="btns">
             <a
-              href={"https://akhileswar1905.github.io/MusicPlayer/"}
+              href={"https://musicplayer-akhileswar.vercel.app"}
               target={"_blank"}
               rel="noreferrer"
             >
