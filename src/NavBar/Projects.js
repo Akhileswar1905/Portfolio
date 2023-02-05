@@ -1,71 +1,44 @@
-import project1 from "../LearnCode.png";
+import project1 from "../project1.png";
 import project2 from "../project2.png";
+import project3 from "../project3.png";
+import React, { useState, useEffect } from "react";
 
 const Projects = () => {
+  var i = 0;
+  const [repos, setRepos] = useState([]);
+  const images = [{ 1: project1 }, { 2: project2 }, { 3: project3 }];
+  useEffect(() => {
+    fetch("https://api.github.com/users/akhileswar1905/repos")
+      .then((response) => response.json())
+      .then((data) => setRepos(data))
+      .catch((error) => console.error(error));
+  }, []);
   return (
-    <div className="lay">
-      <h1>Projects</h1>
-      <div className="projects-layout">
-        <div className="project p-1">
-          <img src={project1} alt="" className="left" />
-          <h4>LearnCode</h4>
-          <div className="info">
-            <p>
-              This website is designed to provide resources and tutorials for
-              learning how to code online. It provides a variety of resources
-              such as video tutorials, coding challenges, and articles that can
-              be used to learn coding skills. Additionally, the website also
-              provides links to coding bootcamps, online courses, and other
-              online learning resources.
-            </p>
-          </div>
-          <div className="btns">
-            <a
-              href={"https://learncode-fun.vercel.app/"}
-              target={"_blank"}
-              rel="noreferrer"
-            >
-              <button>Demo</button>
-            </a>
-            <a
-              href={"https://github.com/Akhileswar1905/LearnCode"}
-              target={"_blank"}
-              rel="noreferrer"
-            >
-              <button>Github</button>
-            </a>
-          </div>
-        </div>
+    <ul>
+      {repos.map((repo) => {
+        if (!repo.homepage) return null;
+        i++;
+        console.log(images[i - 1][i]);
 
-        <div className="project p-2">
-          <img src={project2} alt="" className="right" />
-          <h4>Music Player</h4>
-          <div className="info">
-            <p>
-              This project is a music player created using HTML, CSS, and
-              JavaScript. It allows users to play, pause, and stop their
-              favorite music tracks.
-            </p>
+        return (
+          <div className="project">
+            <img src={images[i - 1][i]} alt={repo.name} className="left" />
+            <h4>{repo.name}</h4>
+            <div className="info">
+              <p>{repo.description}</p>
+            </div>
+            <div className="btns">
+              <a href={repo.homepage} target={"_blank"} rel="noreferrer">
+                <button>Demo</button>
+              </a>
+              <a href={repo.html_url} target={"_blank"} rel="noreferrer">
+                <button>Github</button>
+              </a>
+            </div>
           </div>
-          <div className="btns">
-            <a
-              href={"https://musicplayer-akhileswar.vercel.app"}
-              target={"_blank"}
-              rel="noreferrer"
-            >
-              <button>Demo</button>
-            </a>
-            <a
-              href={"https://github.com/Akhileswar1905/MusicPlayer"}
-              target={"_blank"}
-              rel="noreferrer"
-            >
-              <button>Github</button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+        );
+      })}
+    </ul>
   );
 };
 
