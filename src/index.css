@@ -27,7 +27,8 @@ p {
   margin: 10px;
 }
 
-h1 {
+h1,
+h2 {
   font-size: 3.5rem;
 }
 
@@ -177,9 +178,9 @@ button:hover {
 
 /* Projects */
 
-h1 {
+h2 {
   text-align: center;
-  margin: 30px;
+  margin-top: 50px;
 }
 
 .projects-layout {
@@ -196,6 +197,15 @@ h1 {
   border-radius: 20px;
 
   width: 750px;
+}
+
+h4 {
+  padding: 12px;
+  text-decoration: underline;
+}
+h4:hover {
+  color: yellow;
+  cursor: pointer;
 }
 
 .project {
@@ -237,7 +247,8 @@ h1 {
 /* Media Query for home page */
 
 @media screen and (max-width: 1440px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 3rem;
   }
   p {
@@ -247,7 +258,8 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 2.5rem;
   }
   p {
@@ -257,7 +269,8 @@ h1 {
 }
 
 @media screen and (max-width: 650px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 1.5rem;
   }
   p {
@@ -273,7 +286,8 @@ h1 {
 }
 
 @media screen and (width: 600px) and (width: 480px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 2rem;
   }
   p {
@@ -290,7 +304,8 @@ h1 {
 }
 
 @media screen and (max-width: 565px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 1.75rem;
   }
   p {
@@ -306,7 +321,8 @@ h1 {
   }
 }
 @media screen and (max-width: 400px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 1.35rem;
   }
   p {
@@ -323,7 +339,8 @@ h1 {
 }
 
 @media screen and (max-width: 285px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 0.85rem;
   }
   .about-section p {
@@ -340,7 +357,8 @@ h1 {
 /* Media Query for intro */
 
 @media screen and (max-width: 1440px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 3rem;
   }
   .about-section p {
@@ -350,7 +368,8 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 2.5rem;
   }
   .about-section p {
@@ -360,7 +379,8 @@ h1 {
 }
 
 @media screen and (max-width: 650px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 1.5rem;
   }
   .about-section p {
@@ -369,7 +389,8 @@ h1 {
 }
 
 @media screen and (width: 600px) and (width: 480px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 2rem;
   }
   .about-section p {
@@ -379,7 +400,8 @@ h1 {
 }
 
 @media screen and (max-width: 565px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 1.75rem;
   }
   .about-section p {
@@ -392,7 +414,8 @@ h1 {
   }
 }
 @media screen and (max-width: 400px) {
-  .about-section h1 {
+  .about-section h1,
+  h2 {
     font-size: 1.5rem;
   }
   .about-section p {
@@ -417,7 +440,8 @@ h1 {
 }
 
 @media screen and (max-width: 285px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 0.85rem;
   }
   .about-section p {
@@ -434,7 +458,8 @@ h1 {
 
 /* Media Queries for Projects */
 @media screen and (max-width: 768px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 2.5rem;
   }
   .info p {
@@ -446,7 +471,8 @@ h1 {
   }
 }
 @media screen and (max-width: 565px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 1.75rem;
   }
   .info p {
@@ -458,7 +484,8 @@ h1 {
   }
 }
 @media screen and (max-width: 400px) {
-  h1 {
+  h1,
+  h2 {
     font-size: 1.75rem;
   }
   h4 {

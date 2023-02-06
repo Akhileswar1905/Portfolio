@@ -22,6 +22,12 @@ const Projects = () => {
   }, []);
   return (
     <ul>
+      <h2>My Recent Works</h2>
+      <p
+        style={{ textAlign: "center", marginBottom: "30px", marginTop: "12px" }}
+      >
+        My projects are showcased below
+      </p>
       {repos.map((repo) => {
         if (!repo.homepage) return null;
         i++;
