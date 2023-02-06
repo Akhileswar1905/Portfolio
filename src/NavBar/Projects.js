@@ -1,12 +1,19 @@
 import project1 from "../project1.png";
 import project2 from "../project2.png";
 import project3 from "../project3.png";
+import project4 from "../project4.png";
+
 import React, { useState, useEffect } from "react";
 
 const Projects = () => {
   var i = 0;
   const [repos, setRepos] = useState([]);
-  const images = [{ 1: project1 }, { 2: project2 }, { 3: project3 }];
+  const images = [
+    { 1: project1 },
+    { 2: project2 },
+    { 3: project3 },
+    { 4: project4 },
+  ];
   useEffect(() => {
     fetch("https://api.github.com/users/akhileswar1905/repos")
       .then((response) => response.json())
