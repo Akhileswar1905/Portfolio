@@ -178,6 +178,7 @@ button:hover {
 
 /* Projects */
 
+h1,
 h2 {
   text-align: center;
   margin-top: 50px;
@@ -244,6 +245,9 @@ h4:hover {
   width: 75%;
 }
 
+.contact-layout h1 {
+  margin: 30px;
+}
 /* Media Query for home page */
 
 @media screen and (max-width: 1440px) {
