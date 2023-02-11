@@ -43,6 +43,11 @@ p {
   margin: 10px;
 }
 
+.icons img:hover {
+  box-shadow: 0 4px 8px 0 lightblue, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 30%;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -204,14 +209,10 @@ h4 {
   padding: 12px;
   text-decoration: underline;
 }
-h4:hover {
-  color: yellow;
-  cursor: pointer;
-}
 
 .project {
   height: 100vh;
-  border-bottom: 2px solid slateblue;
+  border-bottom: 3px solid slateblue;
   background-color: transparent;
   border-radius: 10px;
   display: flex;
@@ -220,11 +221,11 @@ h4:hover {
   align-items: center;
   justify-content: center;
   padding: 20px;
+  box-shadow: 0 2px 4px 0 lightblue, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .project:hover {
-  box-shadow: white 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 6px 0 lightblue, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .info {
@@ -260,6 +261,9 @@ footer {
 }
 .icon img {
   width: 25px;
+}
+.icon {
+  display: flex;
 }
 /* Media Query for home page */
 
@@ -318,6 +322,9 @@ footer {
   .icons img {
     width: 30px;
   }
+  .icon img {
+    width: 20px;
+  }
 }
 
 @media screen and (max-width: 565px) {
@@ -352,6 +359,13 @@ footer {
 
   .icons a img {
     width: 30px;
+  }
+  .icon img {
+    width: 10px;
+  }
+  footer {
+    display: flex;
+    font-size: 0.25em;
   }
 }
 
