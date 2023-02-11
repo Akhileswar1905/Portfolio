@@ -27,7 +27,7 @@ let route = createBrowserRouter(
 );
 
 function App() {
-  document.title = "My Portfolio";
+  document.title = "Akhileswar | Portfolio";
 
   return <RouterProvider router={route} />;
 }
