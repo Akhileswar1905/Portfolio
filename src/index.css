@@ -38,7 +38,7 @@ p {
   font-size: 1.5rem;
 }
 
-.icons a img {
+.icons img {
   width: 40px;
   margin: 10px;
 }
@@ -248,6 +248,19 @@ h4:hover {
 .contact-layout h1 {
   margin: 30px;
 }
+
+footer {
+  background-color: #101010;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.5em;
+  font-family: Quicksand;
+  margin-bottom: 0;
+}
+.icon img {
+  width: 25px;
+}
 /* Media Query for home page */
 
 @media screen and (max-width: 1440px) {
@@ -302,7 +315,7 @@ h4:hover {
     font-size: 0.85rem;
   }
 
-  .icons a img {
+  .icons img {
     width: 30px;
   }
 }

@@ -16,7 +16,7 @@ const Home = () => {
           Machine Learning , Artificial Intelligence and Web Development.
         </p>
         <div className="icons">
-          <a href="https://www.linkedin.com/in/akhileswar-sathivada-243b66237/">
+          <a href="https://www.linkedin.com/in/sathivada-akhileswar-243b66237/">
             <img src={linkedin} alt="" />
           </a>
           <a href="https://github.com/Akhileswar1905">
