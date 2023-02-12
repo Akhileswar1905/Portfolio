@@ -1,21 +1,16 @@
-import project1 from "../project1.png";
-import project2 from "../project2.png";
-import project3 from "../project3.png";
-import project4 from "../project4.png";
-import project5 from "../project5.png";
+import project2 from "../projects/project2.png";
+import project3 from "../projects/project3.png";
+import project4 from "../projects/project4.png";
+import project1 from "../projects/project1.png";
+import project5 from "../projects/project5.png";
 
 import React, { useState, useEffect } from "react";
 
 const Projects = () => {
   var i = 0;
   const [repos, setRepos] = useState([]);
-  const images = [
-    { 1: project1 },
-    { 2: project2 },
-    { 3: project3 },
-    { 4: project4 },
-    { 5: project5 },
-  ];
+  const images = [project1, project2, project3, project4, project5];
+
   useEffect(() => {
     fetch("https://api.github.com/users/akhileswar1905/repos")
       .then((response) => response.json())
@@ -30,14 +25,15 @@ const Projects = () => {
       >
         My projects are showcased below
       </p>
+      {/* {(i = 0)} */}
       {repos.map((repo) => {
         if (!repo.homepage) return null;
         i++;
-        console.log(images[i - 1][i]);
+        console.log(repo);
 
         return (
           <div className="project">
-            <img src={images[i - 1][i]} alt={repo.name} className="left" />
+            <img src={images[i - 1]} alt={repo.name} className="left" />
             <h4>{repo.name}</h4>
             <div className="info">
               <p>{repo.description}</p>
