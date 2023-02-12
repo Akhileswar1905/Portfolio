@@ -2,6 +2,7 @@ import project1 from "../project1.png";
 import project2 from "../project2.png";
 import project3 from "../project3.png";
 import project4 from "../project4.png";
+import project5 from "../project5.png";
 
 import React, { useState, useEffect } from "react";
 
@@ -13,6 +14,7 @@ const Projects = () => {
     { 2: project2 },
     { 3: project3 },
     { 4: project4 },
+    { 5: project5 },
   ];
   useEffect(() => {
     fetch("https://api.github.com/users/akhileswar1905/repos")
