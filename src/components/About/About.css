@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+body {
+  min-height: 100vh;
+}
+.about {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins";
+}
+.about-section1,
+.about-section2 {
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.aboutme {
+  color: #00abf0;
+  font-size: 3rem;
+}
+
+.about-section2 > .context {
+  font-size: 0.85rem;
+}
+
+.skills-tab {
+  width: 90%;
+  margin-top: 23px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pic {
+  width: 400px;
+  height: 400px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 920px) {
+  .about-section1 {
+    display: none;
+  }
+  .about-section2 {
+    width: 100%;
+  }
+  .skills-tab {
+    width: 100%;
+  }
+  .about-section2 > .context {
+    font-size: 1rem;
+    padding: 23px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .about {
+    height: 100vh;
+  }
+  .about-section2 > .context {
+    font-size: 0.85rem;
+    padding: 23px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .about-section2 > .context {
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .about-section2 {
+    margin-top: 100px;
+  }
+  .about-section2 > h1 {
+    font-size: 2.3rem;
+  }
+  .about-section2 > .context {
+    font-size: 0.7rem;
+  }
+}
