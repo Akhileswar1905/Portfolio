@@ -33,13 +33,11 @@ const Projects = () => {
       <h1 className="aboutme">My Work</h1>
       <div className="projects-container  ">
         {projects.map((project) => (
-          <div className="project-box">
-            {/* <div className="image"> */}
+          <div className="card">
             <img src={project.img} alt={project.name} />
-            {/* </div> */}
             <div className="project-info">
               <h4 className="pname">{project.name}</h4>
-              <p>{project.desc} </p>
+              <p>{project.desc}</p>
               <div className="btns-3">
                 <a href={project.demo} className="btn1">
                   <FaShare />

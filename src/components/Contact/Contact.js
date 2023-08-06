@@ -1,56 +1,68 @@
 import "./Contact.css";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
-import phone from "../../imgs/icons/phone.png";
-import msg from "../../imgs/icons/msg.png";
-import share from "../../imgs/icons/share.png";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_5bychmk",
+        "template_1lyhena",
+        form.current,
+        "84cx9MgwDw9L1-9-k"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          e.target.reset();
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
-    <>
-      <h1 className="heading aboutme">
-        <span>Conta</span>ct Me
-      </h1>
-      <div className="main">
-        <div className="contact">
-          <div className="contact-box">
-            <div className="img">
-              <img className="image" src={msg} alt="email" />
-            </div>
-            <div className="contact-info">
-              <div className="gold">Email</div>
-              <div>akhileswarsathivada@gmail.com</div>
-            </div>
-          </div>
-          <div className="contact-box">
-            <div className="img">
-              <img className="image" src={phone} alt="phone" />
-            </div>
-            <div className="contact-info">
-              <div className="gold">Phone Number</div>
-              <div>7075971917</div>
-            </div>
-          </div>
-          <div className="contact-box">
-            <div className="img">
-              <img className="image" src={share} alt="social" />
-            </div>
-            <div className="contact-info">
-              <div className="gold">Social Media</div>
-              <div className="socialMedia">
-                <a href="https://www.linkedin.com/in/sathivada-akhileswar-243b66237/">
-                  <FaLinkedin className="icon" />
-                </a>
-                <a href="https://github.com/Akhileswar1905">
-                  <FaGithub className="icon" />
-                </a>
-                <a href="https://www.instagram.com/urs_akhileswar/">
-                  <FaInstagram className="icon" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+    <div className="contact-container">
+      <form ref={form} onSubmit={sendEmail}>
+        <h1 className="aboutme">Contact Form</h1>
+        <input
+          type="text"
+          className="name"
+          placeholder="Your Name"
+          required
+          name="user_name"
+        />
+        <input
+          type="text"
+          className="email"
+          name="user_email"
+          placeholder="Your Email"
+          required
+        />
+        <input
+          type="text"
+          className="phone"
+          placeholder="Your Phone number"
+          name="phone_number"
+          required
+        />
+
+        <textarea
+          className="msg"
+          placeholder="How can I help you"
+          rows="5"
+          name="message"
+          required
+        ></textarea>
+
+        <input type="submit" value="Send" />
+      </form>
+    </div>
   );
 };
 

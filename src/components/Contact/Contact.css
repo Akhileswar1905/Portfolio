@@ -1,82 +1,39 @@
-.main {
+.contact-container {
+  font-family: "poppins";
+  width: 100%;
+  height: 87vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 23px;
 }
 
-.contact {
+form {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: center;
+  gap: 23px;
+  width: 50%;
 }
 
-.contact-box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 73px;
+form > input,
+textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  outline: none;
 }
 
-.img {
-  margin-bottom: 12px;
-}
-
-.contact-info {
-  font-size: 1.3em;
-}
-
-.image {
-  width: 100px;
-}
-
-.socialMedia > .icon {
-  display: flex;
+input[type="submit"] {
+  width: 30%;
+  align-self: center;
+  background-color: dodgerblue;
+  color: white;
+  font-weight: bolder;
   cursor: pointer;
-  font-size: 34px;
 }
 
-/* Media Queries */
-
-@media screen and (max-width: 485px) {
-  .contact-info {
-    font-size: 1.2em;
-  }
-  .image {
-    width: 70px;
-  }
-  .heading {
-    font-size: 2.3em;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .contact-info {
-    font-size: 1.1em;
-  }
-  .image {
-    width: 65px;
-  }
-  .heading {
-    font-size: 2.3em;
-  }
-  .icon {
-    width: 65px;
-  }
-}
-
-@media screen and (max-width: 350px) {
-  .contact-info {
-    font-size: 1em;
-  }
-  .image {
-    width: 50px;
-  }
-  .heading {
-    font-size: 2.3em;
-  }
-  .icon {
-    width: 40px;
+@media screen and (max-width: 768px) {
+  form {
+    width: 80%;
   }
 }

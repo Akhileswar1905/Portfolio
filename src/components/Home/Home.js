@@ -15,7 +15,9 @@ const Home = () => {
               both professionally and personally.
             </p>
             <div className="btns-2">
-              <NavLink className="btn1">Let's Connect</NavLink>
+              <NavLink to="/contact" className="btn1">
+                Let's Connect
+              </NavLink>
               <NavLink className="btn2">Hire Me</NavLink>
             </div>
             <div className="social-media">
