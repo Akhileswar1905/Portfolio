@@ -34,6 +34,10 @@ const Resume = () => {
               <p>Web Developer</p>
               <p className="gold">2022 - Present</p>
             </div>
+            <div className="resume-info">
+              <p>GDSC Lead</p>
+              <p className="gold">2023 - 2024</p>
+            </div>
             {/* <div className="resume-info">
               <p>Machine Learning Enginner</p>
               <p className="gold">20xx - 20xx</p>
