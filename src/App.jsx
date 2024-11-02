@@ -4,12 +4,16 @@ import Home from "./components/Home/home";
 // import Projects from "./components/Projects/projects";
 import styles from "./App.module.css";
 import { IoLogoGithub, IoLogoLinkedin, IoLogoInstagram } from "react-icons/io";
+import { BiMenuAltLeft, BiMenuAltRight } from "react-icons/bi";
 import {
   MotionDiv,
   MotionNav,
 } from "./components/motionComponents/motionComponents";
+import { useState } from "react";
 function App() {
   document.title = "Akhileswar | Portfolio";
+
+  const [show, setShow] = useState(false);
 
   const container = {
     visible: {
@@ -52,7 +56,53 @@ function App() {
             Contact
           </MotionDiv>
         </MotionDiv>
+
+        {/* DropDown of Links */}
+        <MotionDiv variants={item} className={styles.dropdown}>
+          <MotionDiv variants={item} className={styles.menu}>
+            {!show ? (
+              <BiMenuAltRight
+                size={32}
+                className={styles.icon}
+                onClick={() => {
+                  setShow(!show);
+                }}
+              />
+            ) : (
+              <BiMenuAltLeft
+                size={32}
+                className={styles.icon}
+                onClick={() => {
+                  setShow(!show);
+                }}
+              />
+            )}
+          </MotionDiv>
+          {show && (
+            <div
+              variants={item}
+              className={styles.dropdownContent}
+              style={{
+                display: show ? "block" : "none",
+              }}
+            >
+              <div variants={item} className={styles.dropdownLink}>
+                About
+              </div>
+              <div variants={item} className={styles.dropdownLink}>
+                Experience
+              </div>
+              <div variants={item} className={styles.dropdownLink}>
+                Projects
+              </div>
+              <div variants={item} className={styles.dropdownLink}>
+                Contact
+              </div>
+            </div>
+          )}
+        </MotionDiv>
       </MotionNav>
+
       <MotionDiv variants={item} className={styles.overlay}>
         <MotionDiv variants={item} className={styles.line}></MotionDiv>
         <MotionDiv variants={item} className={styles.icons}>

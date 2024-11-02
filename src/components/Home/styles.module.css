@@ -52,3 +52,21 @@
   scale: 1.15;
   transition: all 0.4s ease-in-out;
 }
+
+@media (max-width: 1330px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 810px) {
+  .container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0.5rem;
+  }
+}
