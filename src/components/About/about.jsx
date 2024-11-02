@@ -1,5 +1,36 @@
-import { MotionDiv } from "../motionComponents/motionComponents";
+import {
+  MotionDiv,
+  MotionLi,
+  MotionUl,
+} from "../motionComponents/motionComponents";
+import Line from "../Line/line";
 import styles from "./styles.module.css";
+import {
+  IoLogoJavascript,
+  IoLogoReact,
+  IoLogoNodejs,
+  IoLogoFirebase,
+} from "react-icons/io5";
+import { SiExpress, SiMongodb, SiMysql, SiFastapi } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, x: -20 },
+  show: {
+    opacity: 1,
+    x: 0,
+  },
+};
 
 const About = () => {
   return (
@@ -24,25 +55,7 @@ const About = () => {
         <div className={styles.textContainer}>
           <div className={styles.header}>
             <h1 className={styles.heading}>About Me</h1>
-
-            <MotionDiv
-              initial={{
-                width: 0,
-              }}
-              whileInView={{
-                width: "90%",
-                transition: {
-                  duration: 1,
-                },
-              }}
-              viewport={{
-                once: true,
-              }}
-              style={{
-                height: "1px",
-                backgroundColor: "#fff",
-              }}
-            ></MotionDiv>
+            <Line />
           </div>
           <div className={styles.desc}>
             <p>
@@ -61,26 +74,50 @@ const About = () => {
               intern at <span>Gen Alpha Digital</span>, a startup where I’m
               involved in building the company’s <span>Portfolio project</span>.
             </p>
-            <p>
-              I enjoy working with a variety of technologies, and my current
-              tech stack includes:
-            </p>
-            <ul>
-              <li>JavaScript</li>
-              <li>React.js</li>
-              <li>Next.js 14</li>
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>FastAPI</li>
-              <li>MongoDB</li>
-              <li>MySQL</li>
-              <li>PostgreSQL</li>
-              <li>Google Firebase</li>
-            </ul>
           </div>
         </div>
         <div className={styles.imgContainer}></div>
       </MotionDiv>
+      <div className={styles.tech}>
+        <p>
+          I enjoy working with a variety of technologies, and my current tech
+          stack includes:
+        </p>
+        <MotionUl
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <MotionLi variants={item}>
+            <IoLogoJavascript />
+          </MotionLi>
+          <MotionLi variants={item}>
+            <IoLogoReact />
+          </MotionLi>
+          <MotionLi variants={item}>
+            <TbBrandNextjs />
+          </MotionLi>
+          <MotionLi variants={item}>
+            <IoLogoNodejs />
+          </MotionLi>
+          <MotionLi variants={item}>
+            <SiExpress />
+          </MotionLi>
+          <MotionLi variants={item}>
+            <SiFastapi />
+          </MotionLi>
+          <MotionLi variants={item}>
+            <IoLogoFirebase />
+          </MotionLi>
+          <MotionLi variants={item}>
+            <SiMongodb />
+          </MotionLi>
+          <MotionLi variants={item}>
+            <SiMysql />
+          </MotionLi>
+        </MotionUl>
+      </div>
     </div>
   );
 };

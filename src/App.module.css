@@ -5,6 +5,9 @@
   padding: 2rem;
   position: sticky;
   top: 0;
+  z-index: 10;
+  background-color: #12121212;
+  backdrop-filter: blur(10px);
 }
 
 .logo {

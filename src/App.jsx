@@ -9,7 +9,9 @@ import {
   MotionDiv,
   MotionNav,
 } from "./components/motionComponents/motionComponents";
+import Projects from "./components/Projects/projects";
 import { useState } from "react";
+
 function App() {
   document.title = "Akhileswar | Portfolio";
 
@@ -47,10 +49,10 @@ function App() {
             About
           </MotionDiv>
           <MotionDiv variants={item} className={styles.link}>
-            Experience
+            Projects
           </MotionDiv>
           <MotionDiv variants={item} className={styles.link}>
-            Projects
+            Experience
           </MotionDiv>
           <MotionDiv variants={item} className={styles.link}>
             Contact
@@ -120,6 +122,7 @@ function App() {
       <MotionDiv variants={item} className={styles.content}>
         <Home />
         <About />
+        <Projects />
       </MotionDiv>
     </MotionDiv>
   );
