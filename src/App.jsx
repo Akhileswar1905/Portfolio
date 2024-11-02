@@ -1,4 +1,4 @@
-// import About from "./components/About/about";
+import About from "./components/About/about";
 // import Experience from "./components/Experience/experience";
 import Home from "./components/Home/home";
 // import Projects from "./components/Projects/projects";
@@ -119,6 +119,7 @@ function App() {
       </MotionDiv>
       <MotionDiv variants={item} className={styles.content}>
         <Home />
+        <About />
       </MotionDiv>
     </MotionDiv>
   );

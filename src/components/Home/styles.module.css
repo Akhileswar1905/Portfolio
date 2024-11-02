@@ -1,12 +1,18 @@
 .container {
-  /* border: 1px solid var(--border-color); */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 70vh;
-  width: 85%;
+  align-items: center;
+  min-height: 80vh;
+  height: 100%;
+  width: 100%;
   padding: 3rem;
   gap: 1rem;
+  margin-bottom: 10rem;
+}
+
+.home {
+  width: 70%;
 }
 
 .texts {
@@ -23,7 +29,15 @@
 .name {
   font-size: 3.5rem;
   font-weight: 600;
-  color: var(--primary-color);
+  color: white;
+}
+
+.role span {
+  color: var(--primary-text);
+}
+
+.role {
+  color: white;
 }
 
 .desc {
