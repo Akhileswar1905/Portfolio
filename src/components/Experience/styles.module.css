@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+  padding: 3rem;
+  gap: 1rem;
+}
+
+.wrapper {
+  width: 80%;
+  display: flex;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.work {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 850px) {
+  .container {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0;
+  }
+  .wrapper {
+    width: 100%;
+  }
+}

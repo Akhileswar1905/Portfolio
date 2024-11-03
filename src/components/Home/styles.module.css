@@ -1,0 +1,119 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  height: 100%;
+  width: 100%;
+  padding: 3rem;
+  gap: 1rem;
+  margin-bottom: 10rem;
+}
+
+.home {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.greetings {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.name {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.role span {
+  color: var(--primary-text);
+}
+
+.role {
+  color: white;
+}
+
+.desc {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  margin: 20px 0;
+  width: fit-content;
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  color: var(--primary-text);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2), 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.cta:hover {
+  box-shadow: 0 0.75rem 1.25rem rgba(0, 0, 0, 0.2),
+    0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+  color: var(--white-color);
+  scale: 1.05;
+}
+
+@media (max-width: 1330px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 810px) {
+  .container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0;
+  }
+  .home {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .name {
+    font-size: 3rem;
+  }
+  .greetings {
+    font-size: 1.5rem;
+  }
+  .role {
+    font-size: 1.1rem;
+  }
+  .desc {
+    font-size: 0.8rem;
+  }
+  .cta {
+    font-size: 0.8rem;
+  }
+}
