@@ -1,5 +1,6 @@
 import { MotionDiv } from "../motionComponents/motionComponents";
 import styles from "./styles.module.css";
+import { IoLogoGithub, IoLogoLinkedin, IoLogoInstagram } from "react-icons/io";
 
 const container = {
   hidden: { opacity: 0 },
@@ -49,6 +50,29 @@ const Contact = () => {
         className={styles.footer}
         style={{ position: "absolute", bottom: 0 }}
       >
+        <div className={styles.social}>
+          <a
+            href="https://github.com/Akhileswar1905"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IoLogoGithub size={24} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/sathivada-akhileswar-243b66237/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IoLogoLinkedin size={24} />
+          </a>
+          <a
+            href="https://www.instagram.com/urs_akhileswar/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <IoLogoInstagram size={24} />
+          </a>
+        </div>
         <small>
           Designed and Developed by{" "}
           <span>

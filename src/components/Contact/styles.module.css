@@ -12,7 +12,7 @@
 }
 
 .wrapper {
-  width: 60%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -50,4 +50,38 @@
 
 span {
   color: #fff;
+}
+
+.social {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .container {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .social {
+    display: flex;
+  }
+  .container {
+    padding: 0;
+  }
+  .wrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  p {
+    font-size: 0.8rem;
+  }
 }

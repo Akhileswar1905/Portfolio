@@ -12,7 +12,7 @@ const work = [
     company: "MK Logistics",
     date: "June 2024 - September 2024",
     description:
-      "Developed a mobile application for the company's employees to track their work hours and schedules. Also built a dashboard for the company's managers to track the payments and work of the employees.",
+      "Created a mobile app for employees to track work hours and schedules, along with a dashboard for managers to monitor payments and employee activity.",
   },
 ];
 

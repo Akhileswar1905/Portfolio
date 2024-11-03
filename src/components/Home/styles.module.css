@@ -90,3 +90,30 @@
     padding: 0.5rem;
   }
 }
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0;
+  }
+  .home {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .name {
+    font-size: 3rem;
+  }
+  .greetings {
+    font-size: 1.5rem;
+  }
+  .role {
+    font-size: 1.1rem;
+  }
+  .desc {
+    font-size: 0.8rem;
+  }
+  .cta {
+    font-size: 0.8rem;
+  }
+}

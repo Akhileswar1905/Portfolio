@@ -37,3 +37,12 @@
     gap: 0;
   }
 }
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0;
+  }
+  .wrapper {
+    width: 100%;
+  }
+}

@@ -93,3 +93,24 @@
     flex-wrap: wrap;
   }
 }
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0;
+  }
+  .wrapper,
+  .tech {
+    width: 100%;
+  }
+}
+
+@media (max-width: 450px) {
+  .desc,
+  .tech {
+    font-size: 0.8rem;
+  }
+  .tech ul li {
+    font-size: 1.5rem;
+    margin: 0.5rem;
+  }
+}

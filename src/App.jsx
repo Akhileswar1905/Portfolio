@@ -9,13 +9,24 @@ import {
   MotionDiv,
   MotionNav,
 } from "./components/motionComponents/motionComponents";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Contact from "./components/Contact/contact";
 
 function App() {
   document.title = "Akhileswar | Portfolio";
 
   const [show, setShow] = useState(false);
+
+  // Create refs for each section
+  const homeRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const experienceRef = useRef(null);
+  const contactRef = useRef(null);
+
+  const scrollToSection = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   const container = {
     visible: {
@@ -45,16 +56,32 @@ function App() {
           A.
         </MotionDiv>
         <MotionDiv variants={item} className={styles.links}>
-          <MotionDiv variants={item} className={styles.link}>
+          <MotionDiv
+            variants={item}
+            className={styles.link}
+            onClick={() => scrollToSection(aboutRef)}
+          >
             About
           </MotionDiv>
-          <MotionDiv variants={item} className={styles.link}>
+          <MotionDiv
+            variants={item}
+            className={styles.link}
+            onClick={() => scrollToSection(projectsRef)}
+          >
             Projects
           </MotionDiv>
-          <MotionDiv variants={item} className={styles.link}>
+          <MotionDiv
+            variants={item}
+            className={styles.link}
+            onClick={() => scrollToSection(experienceRef)}
+          >
             Experience
           </MotionDiv>
-          <MotionDiv variants={item} className={styles.link}>
+          <MotionDiv
+            variants={item}
+            className={styles.link}
+            onClick={() => scrollToSection(contactRef)}
+          >
             Contact
           </MotionDiv>
         </MotionDiv>
@@ -66,42 +93,16 @@ function App() {
               <BiMenuAltRight
                 size={32}
                 className={styles.icon}
-                onClick={() => {
-                  setShow(!show);
-                }}
+                onClick={() => setShow(!show)}
               />
             ) : (
               <BiMenuAltLeft
                 size={32}
                 className={styles.icon}
-                onClick={() => {
-                  setShow(!show);
-                }}
+                onClick={() => setShow(!show)}
               />
             )}
           </MotionDiv>
-          {show && (
-            <div
-              variants={item}
-              className={styles.dropdownContent}
-              style={{
-                display: show ? "block" : "none",
-              }}
-            >
-              <div variants={item} className={styles.dropdownLink}>
-                About
-              </div>
-              <div variants={item} className={styles.dropdownLink}>
-                Experience
-              </div>
-              <div variants={item} className={styles.dropdownLink}>
-                Projects
-              </div>
-              <div variants={item} className={styles.dropdownLink}>
-                Contact
-              </div>
-            </div>
-          )}
         </MotionDiv>
       </MotionNav>
 
@@ -132,12 +133,63 @@ function App() {
         </MotionDiv>
       </MotionDiv>
       <MotionDiv variants={item} className={styles.content}>
-        <Home />
-        <About />
-        <Projects />
-        <Experience />
-        <Contact />
+        <div ref={homeRef}>
+          <Home />
+        </div>
+        <div ref={aboutRef}>
+          <About />
+        </div>
+        <div ref={projectsRef}>
+          <Projects />
+        </div>
+        <div ref={experienceRef}>
+          <Experience />
+        </div>
+        <div ref={contactRef}>
+          <Contact />
+        </div>
       </MotionDiv>
+
+      {show && (
+        <div className={styles.dropdownContent}>
+          <div
+            className={styles.dropdownLink}
+            onClick={() => {
+              scrollToSection(aboutRef);
+              setShow(!show);
+            }}
+          >
+            About
+          </div>
+          <div
+            className={styles.dropdownLink}
+            onClick={() => {
+              scrollToSection(experienceRef);
+              setShow(!show);
+            }}
+          >
+            Experience
+          </div>
+          <div
+            className={styles.dropdownLink}
+            onClick={() => {
+              scrollToSection(projectsRef);
+              setShow(!show);
+            }}
+          >
+            Projects
+          </div>
+          <div
+            className={styles.dropdownLink}
+            onClick={() => {
+              scrollToSection(contactRef);
+              setShow(!show);
+            }}
+          >
+            Contact
+          </div>
+        </div>
+      )}
     </MotionDiv>
   );
 }

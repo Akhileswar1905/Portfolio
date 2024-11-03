@@ -27,3 +27,19 @@
   gap: 1rem;
   margin-top: 2rem;
 }
+
+@media (max-width: 850px) {
+  .container {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0;
+  }
+  .wrapper {
+    width: 100%;
+  }
+}
