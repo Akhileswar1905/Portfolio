@@ -35,6 +35,7 @@
 
 .card img:hover {
   filter: grayscale(0);
+  transform: translateY(-0.25rem);
   opacity: 1;
 }
 
@@ -53,6 +54,11 @@
   text-align: right;
   border-radius: 0.3rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.info p:hover {
+  transform: translateY(-0.25rem);
 }
 
 .info a {
@@ -81,6 +87,14 @@
   color: white;
 }
 
+.links a svg {
+  transition: transform 0.2s;
+}
+
+.links a svg:hover {
+  transform: translateY(-0.25rem);
+}
+
 .container:nth-child(even) .card {
   flex-direction: row-reverse;
 }
@@ -95,4 +109,45 @@
 
 .container:nth-child(odd) .imgContainer img {
   box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2), 0 1rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 850px) {
+  .container {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+  .card,
+  .container:nth-child(even) .card {
+    flex-direction: column;
+    background-color: #242424;
+  }
+
+  .imgContainer img {
+    box-shadow: none !important;
+  }
+
+  .container:nth-child(3) .imgContainer img {
+    width: 100%;
+    height: 10rem;
+  }
+
+  .info,
+  .container:nth-child(even) .info {
+    align-items: center;
+    padding: 1rem;
+    gap: 0;
+  }
+  .info p,
+  .container:nth-child(even) .info p {
+    text-align: center;
+    background-color: none;
+  }
+  .techStack {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .links {
+    justify-content: center;
+    margin: 1rem 0;
+  }
 }

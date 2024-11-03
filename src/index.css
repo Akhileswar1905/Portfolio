@@ -42,3 +42,11 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+a {
+  transition: all 0.3s;
+}
+
+a:hover {
+  transform: translateY(-0.25rem);
+}

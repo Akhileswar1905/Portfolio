@@ -91,7 +91,12 @@ a {
   border: 1px solid var(--border-color);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
+  .content {
+    padding: 2rem 5rem;
+  }
+}
+@media (max-width: 500px) {
   .dropdownContent {
     right: 0;
     display: flex !important;
@@ -112,5 +117,8 @@ a {
   }
   .menu {
     align-self: flex-end;
+  }
+  .overlay {
+    display: none;
   }
 }

@@ -70,7 +70,7 @@
   box-shadow: 0 0.75rem 1.25rem rgba(0, 0, 0, 0.2),
     0 0.5rem 1rem rgba(0, 0, 0, 0.2);
   color: var(--white-color);
-  scale: 1.1;
+  scale: 1.05;
 }
 
 @media (max-width: 1330px) {

@@ -69,3 +69,27 @@
 .tech ul li:hover {
   scale: 1.1;
 }
+
+@media (max-width: 850px) {
+  .container {
+    padding: 1rem;
+  }
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .textContainer,
+  .imgContainer {
+    width: 100%;
+  }
+
+  .tech {
+    width: 80%;
+  }
+
+  .tech ul {
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

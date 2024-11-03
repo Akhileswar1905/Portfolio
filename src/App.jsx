@@ -1,5 +1,5 @@
 import About from "./components/About/about";
-// import Experience from "./components/Experience/experience";
+import Experience from "./components/Experience/experience";
 import Home from "./components/Home/home";
 import Projects from "./components/Projects/projects";
 import styles from "./App.module.css";
@@ -10,6 +10,7 @@ import {
   MotionNav,
 } from "./components/motionComponents/motionComponents";
 import { useState } from "react";
+import Contact from "./components/Contact/contact";
 
 function App() {
   document.title = "Akhileswar | Portfolio";
@@ -134,6 +135,8 @@ function App() {
         <Home />
         <About />
         <Projects />
+        <Experience />
+        <Contact />
       </MotionDiv>
     </MotionDiv>
   );
