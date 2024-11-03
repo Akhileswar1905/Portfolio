@@ -11,7 +11,9 @@ const Projects = () => {
           <Line />
         </div>
         <div className={styles.projects}>
-          <Card project={projects[0]} />
+          {projects.map((project) => (
+            <Card key={project.id} project={project} />
+          ))}
         </div>
       </div>
     </div>

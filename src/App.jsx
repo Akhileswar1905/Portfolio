@@ -1,7 +1,7 @@
 import About from "./components/About/about";
 // import Experience from "./components/Experience/experience";
 import Home from "./components/Home/home";
-// import Projects from "./components/Projects/projects";
+import Projects from "./components/Projects/projects";
 import styles from "./App.module.css";
 import { IoLogoGithub, IoLogoLinkedin, IoLogoInstagram } from "react-icons/io";
 import { BiMenuAltLeft, BiMenuAltRight } from "react-icons/bi";
@@ -9,7 +9,6 @@ import {
   MotionDiv,
   MotionNav,
 } from "./components/motionComponents/motionComponents";
-import Projects from "./components/Projects/projects";
 import { useState } from "react";
 
 function App() {
@@ -108,13 +107,25 @@ function App() {
       <MotionDiv variants={item} className={styles.overlay}>
         <MotionDiv variants={item} className={styles.line}></MotionDiv>
         <MotionDiv variants={item} className={styles.icons}>
-          <a href="#" target="_blank">
+          <a
+            href="https://github.com/Akhileswar1905"
+            target="_blank"
+            rel="noreferrer"
+          >
             <IoLogoGithub />
           </a>
-          <a href="#" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/sathivada-akhileswar-243b66237/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <IoLogoLinkedin />
           </a>
-          <a href="#" target="_blank">
+          <a
+            href="https://www.instagram.com/urs_akhileswar/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <IoLogoInstagram />
           </a>
         </MotionDiv>

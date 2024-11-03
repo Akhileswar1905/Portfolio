@@ -12,7 +12,6 @@
 
 .card {
   width: 100%;
-  height: 90%;
   display: flex;
   gap: 1rem;
   border-radius: 10px;
@@ -20,15 +19,23 @@
   transition: transform 0.2s;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
-.card:hover {
-  transform: scale(1.05);
+.card .imgContainer img {
+  width: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: all 0.2s;
+  box-shadow: 0 0.75rem 1.25rem rgba(0, 0, 0, 0.2),
+    0 0.75rem 1.25rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.6rem;
+  opacity: 0.8;
 }
 
-.card img {
-  width: 50%;
-  object-fit: cover;
+.card img:hover {
+  filter: grayscale(0);
+  opacity: 1;
 }
 
 .info {
@@ -36,21 +43,56 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  padding: 1rem;
   gap: 1rem;
+  width: 100%;
 }
 
 .info p {
   background-color: #242424;
   padding: 1rem;
   text-align: right;
+  border-radius: 0.3rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .info a {
-  color: #242424;
-  background-color: #f8f8f8;
+  color: var(--primary-color);
   padding: 0.5rem;
   border-radius: 5px;
   text-decoration: none;
   transition: background-color 0.2s;
+}
+
+.info a:hover {
+  color: white;
+}
+
+.techStack {
+  display: flex;
+  gap: 1rem;
+}
+
+.techStack li {
+  list-style: none;
+  cursor: pointer;
+}
+
+.tech:hover {
+  color: white;
+}
+
+.container:nth-child(even) .card {
+  flex-direction: row-reverse;
+}
+
+.container:nth-child(even) .info {
+  align-items: flex-start;
+}
+
+.container:nth-child(even) .info p {
+  text-align: left;
+}
+
+.container:nth-child(odd) .imgContainer img {
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2), 0 1rem 1.5rem rgba(0, 0, 0, 0.2);
 }
