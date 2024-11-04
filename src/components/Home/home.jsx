@@ -26,7 +26,11 @@ const item = {
   },
 };
 
-const Home = () => {
+const scrollToSection = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+const Home = ({contactRef}) => {
   return (
     <div className={styles.container}>
       <div className={styles.home}>
@@ -56,7 +60,11 @@ const Home = () => {
             eager to learn and grow, I embrace new challenges and technologies
             to stay at the forefront of the industry.{" "}
           </MotionP>
-          <MotionButton variants={item} className={styles.cta}>
+          <MotionButton variants={item} className={styles.cta}
+            onClick={() => {
+              scrollToSection(contactRef);
+            }}
+            >
             Let&apos;s Connect
           </MotionButton>
         </MotionDiv>
