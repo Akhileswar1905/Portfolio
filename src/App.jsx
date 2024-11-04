@@ -134,7 +134,7 @@ function App() {
       </MotionDiv>
       <MotionDiv variants={item} className={styles.content}>
         <div ref={homeRef}>
-          <Home />
+          <Home contactRef = {contactRef}/>
         </div>
         <div ref={aboutRef}>
           <About />
