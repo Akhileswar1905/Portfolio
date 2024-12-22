@@ -32,13 +32,20 @@ const Card = ({ job }) => {
       viewport={{ once: true }}
     >
       <MotionDiv className={styles.card} variants={item}>
-        <header>
-          <h3>{job.title}</h3>
-          <h4>{job.company}</h4>
-          <small>{job.date}</small>
-        </header>
-        <div className={styles.body}>
-          <p>{job.description}</p>
+        <div className={styles.content}>
+          <div className={styles.image}>
+            <img src={job.logo} alt="company" />
+          </div>
+          <div className={styles.text}>
+            <header>
+              <h3>{job.title}</h3>
+              <h4>{job.company}</h4>
+              <small>{job.date}</small>
+            </header>
+            <div className={styles.body}>
+              <p>{job.description}</p>
+            </div>
+          </div>
         </div>
       </MotionDiv>
     </MotionDiv>

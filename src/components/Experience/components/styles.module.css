@@ -33,7 +33,38 @@
   gap: 0.25rem;
 }
 
-@media (max-width: 450px) {
+.content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.content div:first-child {
+  flex: 1;
+}
+
+.content div:last-child {
+  flex: 3;
+}
+
+.image img {
+  width: 250px;
+  height: 250px;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .image {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
   .card p {
     font-size: 0.8rem;
   }

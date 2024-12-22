@@ -15,8 +15,8 @@
   display: flex;
   gap: 1rem;
   border-radius: 10px;
-  padding:1rem 0;
-    transition: transform 0.2s;
+  padding: 1rem 0;
+  transition: transform 0.2s;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -152,16 +152,25 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 1024px) {
   .container {
     padding: 0;
-    margin: 1rem;
+    /* margin: 1rem; */
+  }
+
+  .info {
+    gap: 0.5rem;
   }
 
   .info p {
     font-size: 0.9rem;
     padding: 0.5rem 0;
   }
+
+  .techStack {
+    gap: 0.4rem;
+  }
+
   .techStack li {
     font-size: 0.8rem;
   }
