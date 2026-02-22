@@ -12,6 +12,7 @@ import {
   IoLogoFirebase,
 } from "react-icons/io5";
 import { SiExpress, SiMongodb, SiMysql, SiFastapi } from "react-icons/si";
+
 import { TbBrandNextjs } from "react-icons/tb";
 
 const container = {
@@ -59,24 +60,26 @@ const About = () => {
           </div>
           <div className={styles.desc}>
             <p>
-              Hello! My name is Akhileswar Sathivada, and I’m passionate about
-              creating applications that live on the internet. My journey into
-              web development began in 2022 when I was eager to build something
-              unique and impactful. I wanted to stand out from the crowd, and
-              that desire sparked my fascination with coding and design.
+              I started my journey building modern web applications, focusing on
+              seamless user experiences and robust backend systems. Over time,
+              my interest expanded beyond traditional software toward systems
+              that can reason, adapt, and operate with autonomy. Today, I build
+              full stack applications powered by Agentic AI, creating
+              intelligent systems where structured logic and AI-driven reasoning
+              work together to solve real-world problems.
             </p>
             <p>
-              Since then, I’ve gained valuable experience working as a
-              <span> Freelancer</span>, where I developed a{" "}
-              <span>Mobile app</span> and
-              <span> Dashboard</span> for a company called{" "}
-              <span> MK Logistics</span>. Currently, I’m honing my skills as an
-              intern at <span>Gen Alpha Digital</span>, a startup where I’m
-              involved in building the company’s <span>Portfolio project</span>.
+              My professional experience includes developing production-ready
+              applications as a freelancer and contributing to real-world
+              projects in a startup environment. These experiences strengthened
+              my ability to translate complex ideas into scalable, maintainable
+              solutions.
             </p>
           </div>
         </div>
-        <div className={styles.imgContainer}></div>
+        <div className={styles.imgContainer}>
+          <img src="/assets/img.jpg" alt="Profile" />
+        </div>
       </MotionDiv>
       <div className={styles.tech}>
         <p>
@@ -90,31 +93,43 @@ const About = () => {
           viewport={{ once: true }}
         >
           <MotionLi variants={item}>
-            <IoLogoJavascript />
+            <IoLogoJavascript size={40} />
           </MotionLi>
           <MotionLi variants={item}>
-            <IoLogoReact />
+            <IoLogoReact size={40} />
           </MotionLi>
           <MotionLi variants={item}>
-            <TbBrandNextjs />
+            <TbBrandNextjs size={40} />
           </MotionLi>
           <MotionLi variants={item}>
-            <IoLogoNodejs />
+            <IoLogoNodejs size={40} />
           </MotionLi>
           <MotionLi variants={item}>
-            <SiExpress />
+            <SiExpress size={40} />
           </MotionLi>
           <MotionLi variants={item}>
-            <SiFastapi />
+            <SiFastapi size={40} />
           </MotionLi>
           <MotionLi variants={item}>
-            <IoLogoFirebase />
+            <IoLogoFirebase size={40} />
           </MotionLi>
           <MotionLi variants={item}>
-            <SiMongodb />
+            <SiMongodb size={40} />
           </MotionLi>
           <MotionLi variants={item}>
-            <SiMysql />
+            <SiMysql size={40} />
+          </MotionLi>
+          <MotionLi variants={item}>
+            <img src="/tech/langchain.png" alt="" width={40} />
+          </MotionLi>
+          <MotionLi variants={item}>
+            <img src="/tech/langgraph.png" alt="" width={40} />
+          </MotionLi>
+          <MotionLi variants={item}>
+            <img src="/tech/mcp.png" alt="" width={40} />
+          </MotionLi>
+          <MotionLi variants={item}>
+            <img src="/tech/a2a.svg" alt="" width={40} />
           </MotionLi>
         </MotionUl>
       </div>

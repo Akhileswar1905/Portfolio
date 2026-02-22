@@ -27,10 +27,10 @@ const item = {
 };
 
 const scrollToSection = (ref) => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
-  };
+  ref.current.scrollIntoView({ behavior: "smooth" });
+};
 
-const Home = ({contactRef}) => {
+const Home = ({ contactRef }) => {
   return (
     <div className={styles.container}>
       <div className={styles.home}>
@@ -47,8 +47,8 @@ const Home = ({contactRef}) => {
             Akhileswar
           </MotionH1>
           <MotionH1 variants={item} className={styles.role}>
-            <span>Full stack developer:</span> Bridging design and
-            functionality.
+            <span>Full Stack Engineer:</span> Building AI agents that think,
+            reason, and act.
           </MotionH1>
           <MotionP variants={item} className={styles.desc}>
             I am a passionate full stack developer with expertise in building
@@ -60,11 +60,13 @@ const Home = ({contactRef}) => {
             eager to learn and grow, I embrace new challenges and technologies
             to stay at the forefront of the industry.{" "}
           </MotionP>
-          <MotionButton variants={item} className={styles.cta}
+          <MotionButton
+            variants={item}
+            className={styles.cta}
             onClick={() => {
               scrollToSection(contactRef);
             }}
-            >
+          >
             Let&apos;s Connect
           </MotionButton>
         </MotionDiv>
