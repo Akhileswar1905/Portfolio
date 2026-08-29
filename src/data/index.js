@@ -10,20 +10,20 @@ export const work = [
   },
   {
     id: 1,
-    title: "Web Development Intern",
-    company: "Gen Alpha Digital",
-    date: "July 2024 - 2025",
-    description: "Developed and maintained the company's portfolio.",
-    logo: "/companies/genalpha.svg",
+    title: "Full Stack Developer",
+    company: "Univyn",
+    date: "Feb 2024 - Aug 2025",
+    description: "Worked as a Full-Stack Developer at Qubico, contributing to the development and maintenance of its CRM platform and corporate portfolio website. Built and enhanced features across the frontend and backend, focusing on scalable functionality, smooth user experiences, and efficient business workflows.",
+    logo: "/companies/univyn.jpg",
   },
   {
     id: 2,
     title: "Full Stack Developer",
-    company: "MK Logistics",
-    date: "June 2024 - September 2024",
+    company: "Gen Alpha Digital",
+    date: "June 2024 - Oct 2024",
     description:
-      "Created a mobile app for employees to track work hours and schedules, along with a dashboard for managers to monitor payments and employee activity.",
-    logo: "/companies/mklogistics.svg",
+      "Developed and maintained the company's portfolio, including the website and internal tools. Worked on various projects involving web development, database management, and API integration.",
+    logo: "/companies/genalpha.svg",
   },
 ];
 
@@ -47,6 +47,20 @@ export const projects = [
   },
   {
     id: 1,
+    title: "Qubico",
+    description:
+      "Qubico is a smart, privacy-first workspace management platform that optimizes co-working occupancy, streamlines operations, and strengthens community engagement.",
+    images: [
+      "/projects/qubico/home.png",
+      "/projects/qubico/about.png",
+      "/projects/qubico/offering.png",
+      "/projects/qubico/team.png",
+      "/projects/qubico/partners.png"
+    ],
+    techStack: ["React", "Tailwind CSS", "Material UI"],
+  },
+  {
+    id: 2,
     title: "Gen Alpha Digital",
     description:
       "A digital agency that specializes in creating websites, apps, and digital marketing campaigns for startups and large businesses.",
@@ -55,36 +69,18 @@ export const projects = [
     github: "https://github.com/GenAlphaDigital/Gen-Alpha-Website",
     techStack: ["Next.js", "Framer Motion", "Firebase"],
   },
+  
   {
-    id: 2,
-    title: "MK Logistics Dashboard",
-    description:
-      "A dashboard that helps the logistics company to manage their drivers, track their vehicles, and generate reports.",
-    image: "/projects/project2.jpg",
-    link: "https://mk-logistics-dashboard.vercel.app/",
-    github: "https://github.com/Akhileswar1905/MK-Logistics-Dashboard",
-    techStack: ["Next.js", "Node.js", "Express.js", "MongoDB", "Firebase"],
-  },
-  {
-    id: 4,
+    id: 3,
     title: "DriverSync",
     description:
       "A mobile app that helps the drivers to track their trips, manage their earnings, and connect with other drivers.",
     image: "/projects/project4.jpg",
-    link: "https://expo.dev/artifacts/eas/ccEYaVm7FBpQ5YYLpg4cn3.apk",
+    // link: "https://expo.dev/artifacts/eas/ccEYaVm7FBpQ5YYLpg4cn3.apk",
     github: "https://github.com/Akhileswar1905/Polygon-driver-app",
     techStack: ["React Native", "Firebase"],
   },
-  {
-    id: 3,
-    title: "Kokoro Connect",
-    description:
-      "A social media platform that connects people with similar interests and helps them to collaborate on projects.",
-    image: "/projects/project3.jpg",
-    link: "https://kokoro-connect.vercel.app/",
-    github: "https://github.com/Akhileswar1905/Kokoro-Connect",
-    techStack: ["React", "Firebase"],
-  },
+  
 ];
 
 export const techStack = [
