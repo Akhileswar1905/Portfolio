@@ -39,9 +39,12 @@ function Slideshow({ images, alt }) {
           {images.map((_, i) => (
             <button
               key={i}
-              onClick={(e) => { e.stopPropagation(); setIdx(i); }}
-              className={`size-1.5 rounded-full transition-all cursor-pointer ${
-                i === idx ? "bg-primary w-4" : "bg-foreground/30"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIdx(i);
+              }}
+              className={`size-1.5 cursor-pointer rounded-full transition-all ${
+                i === idx ? "w-4 bg-primary" : "bg-foreground/30"
               }`}
             />
           ))}
@@ -59,9 +62,183 @@ function SpotlightCard({ children, className }) {
     ref.current.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
     ref.current.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
   }, []);
+
   return (
     <div ref={ref} onMouseMove={handleMouse} className={`spotlight-card ${className}`}>
       {children}
+    </div>
+  );
+}
+
+function ProjectCard({ project, index }) {
+  return (
+    <SpotlightCard className="h-full rounded-xl">
+      <Card className="group h-full overflow-hidden border-border bg-card transition-all duration-300 hover:border-primary/20">
+        <div className="relative aspect-[16/10] overflow-hidden">
+          {project.images ? (
+            <Slideshow images={project.images} alt={project.title} />
+          ) : (
+            <img
+              src={project.image}
+              alt={project.title}
+              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          <div className="absolute bottom-3 right-3 flex translate-y-2 gap-2 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                className="flex size-9 items-center justify-center rounded-full bg-background/90 text-foreground backdrop-blur-sm transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                <ExternalLink className="size-4" />
+              </a>
+            )}
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noreferrer"
+                className="flex size-9 items-center justify-center rounded-full bg-background/90 text-foreground backdrop-blur-sm transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                <IoLogoGithub size={16} />
+              </a>
+            )}
+          </div>
+        </div>
+        <CardContent className="flex flex-col gap-2 p-5">
+          <div className="flex items-center justify-between">
+            <h3 className="font-display text-base font-semibold">{project.title}</h3>
+            <span className="font-mono text-[0.65rem] text-muted-foreground">#{String(index + 1).padStart(2, "0")}</span>
+          </div>
+          <p className="text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+          <div className="mt-auto flex flex-wrap gap-1.5 pt-2">
+            {project.techStack.map((t) => (
+              <Badge key={t} variant="secondary" className="rounded-full text-[0.65rem] font-mono">
+                {t}
+              </Badge>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+    </SpotlightCard>
+  );
+}
+
+function MobileProjectCarousel() {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const carouselRef = useRef(null);
+  const isUserInteractingRef = useRef(false);
+  const activeIndexRef = useRef(0);
+
+  const goToSlide = useCallback((index) => {
+    const carousel = carouselRef.current;
+    const slides = carousel?.querySelectorAll("[data-project-slide]");
+    const targetSlide = slides?.[index];
+
+    if (!carousel || !targetSlide) return;
+
+    isUserInteractingRef.current = true;
+    const left = targetSlide.offsetLeft - carousel.offsetLeft;
+    carousel.scrollTo({ left, behavior: "smooth" });
+    activeIndexRef.current = index;
+    setActiveIndex(index);
+
+    window.setTimeout(() => {
+      isUserInteractingRef.current = false;
+    }, 600);
+  }, []);
+
+  // Keep activeIndexRef in sync with any state change (e.g. from manual scroll below)
+  useEffect(() => {
+    activeIndexRef.current = activeIndex;
+  }, [activeIndex]);
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const updateFromScroll = () => {
+      if (isUserInteractingRef.current) return;
+
+      const slides = carousel.querySelectorAll("[data-project-slide]");
+      if (!slides.length) return;
+
+      const viewportCenter = carousel.scrollLeft + carousel.clientWidth / 2;
+      let closestIndex = 0;
+      let closestDistance = Number.POSITIVE_INFINITY;
+
+      slides.forEach((slide, index) => {
+        const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+        const distance = Math.abs(slideCenter - viewportCenter);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+
+      setActiveIndex((current) => (current === closestIndex ? current : closestIndex));
+    };
+
+    carousel.addEventListener("scroll", updateFromScroll, { passive: true });
+    return () => carousel.removeEventListener("scroll", updateFromScroll);
+  }, []);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      if (isUserInteractingRef.current) return;
+      const nextIndex = (activeIndexRef.current + 1) % projects.length;
+      goToSlide(nextIndex);
+    }, 3200);
+
+    return () => window.clearInterval(timer);
+  }, [goToSlide]);
+
+  return (
+    <div className="md:hidden">
+      <div
+        ref={carouselRef}
+        className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        style={{ scrollBehavior: "smooth" }}
+        onTouchStart={() => {
+          isUserInteractingRef.current = true;
+        }}
+        onTouchEnd={() => {
+          window.setTimeout(() => {
+            isUserInteractingRef.current = false;
+          }, 500);
+        }}
+        onMouseDown={() => {
+          isUserInteractingRef.current = true;
+        }}
+        onMouseUp={() => {
+          window.setTimeout(() => {
+            isUserInteractingRef.current = false;
+          }, 500);
+        }}
+      >
+        {projects.map((project, index) => (
+          <div key={project.id} data-project-slide className="min-w-[85vw] snap-center">
+            <ProjectCard project={project} index={index} />
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-4 flex justify-center gap-2">
+        {projects.map((project, index) => (
+          <button
+            key={`${project.id}-dot`}
+            type="button"
+            aria-label={`View ${project.title}`}
+            onClick={() => goToSlide(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === activeIndex ? "w-6 bg-primary" : "w-2 bg-foreground/25"
+            }`}
+          />
+        ))}
+      </div>
     </div>
   );
 }
@@ -80,57 +257,15 @@ export default function Projects() {
       >
         <motion.div variants={rise}>
           <p className="font-mono text-xs text-primary">02 / Work</p>
-          <h2 className="mt-2 font-display text-4xl font-bold md:text-5xl">
-            Selected projects
-          </h2>
+          <h2 className="mt-2 font-display text-4xl font-bold md:text-5xl">Selected projects</h2>
         </motion.div>
 
-        {/* Projects grid */}
-        <div className="grid gap-5 md:grid-cols-2">
-          {projects.map((p, i) => (
-            <motion.div key={p.id} variants={rise}>
-              <SpotlightCard className="h-full rounded-xl">
-                <Card className="group h-full overflow-hidden border-border bg-card transition-all duration-300 hover:border-primary/20">
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    {p.images ? (
-                      <Slideshow images={p.images} alt={p.title} />
-                    ) : (
-                      <img
-                        src={p.image}
-                        alt={p.title}
-                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                    <div className="absolute bottom-3 right-3 flex gap-2 opacity-0 transition-all duration-300 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
-                      {p.link && (
-                        <a href={p.link} target="_blank" rel="noreferrer" className="flex size-9 items-center justify-center rounded-full bg-background/90 backdrop-blur-sm text-foreground transition-colors hover:bg-primary hover:text-primary-foreground">
-                          <ExternalLink className="size-4" />
-                        </a>
-                      )}
-                      {p.github && (
-                        <a href={p.github} target="_blank" rel="noreferrer" className="flex size-9 items-center justify-center rounded-full bg-background/90 backdrop-blur-sm text-foreground transition-colors hover:bg-primary hover:text-primary-foreground">
-                          <IoLogoGithub size={16} />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                  <CardContent className="flex flex-col gap-2 p-5">
-                    <div className="flex items-center justify-between">
-                      <h3 className="font-display text-base font-semibold">{p.title}</h3>
-                      <span className="font-mono text-[0.65rem] text-muted-foreground">#{String(i + 1).padStart(2, "0")}</span>
-                    </div>
-                    <p className="text-sm leading-relaxed text-muted-foreground">{p.description}</p>
-                    <div className="mt-auto flex flex-wrap gap-1.5 pt-2">
-                      {p.techStack.map((t) => (
-                        <Badge key={t} variant="secondary" className="rounded-full text-[0.65rem] font-mono">
-                          {t}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </SpotlightCard>
+        <MobileProjectCarousel />
+
+        <div className="hidden gap-5 md:grid md:grid-cols-2">
+          {projects.map((project, index) => (
+            <motion.div key={project.id} variants={rise}>
+              <ProjectCard project={project} index={index} />
             </motion.div>
           ))}
         </div>

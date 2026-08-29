@@ -32,18 +32,9 @@ export const projects = [
     id: 0,
     title: "ModelWorks",
     description:
-      "An internal platform at Infosys for end-to-end AI model lifecycle, SFT training, evaluation benchmarks, vLLM inference deployment, B200 cluster monitoring, and API analytics on HPC infrastructure.",
-    images: [
-      "/projects/modelworks/training.png",
-      "/projects/modelworks/node-health.png",
-      "/projects/modelworks/pipeline-runs.png",
-      "/projects/modelworks/infrastructure.png",
-      "/projects/modelworks/containers.png",
-      "/projects/modelworks/deploy.png",
-      "/projects/modelworks/analytics.png",
-      "/projects/modelworks/adoption.png",
-    ],
-    techStack: ["React", "Tailwind CSS", "shadcn/ui", "FastAPI", "Slurm", "vLLM", "NeMo", "Docker"],
+      "An internal AI platform built at Infosys covering the end-to-end model lifecycle - training pipelines, evaluation benchmarks, deployment, and infrastructure monitoring at scale.",
+    image: "/projects/modelworks/cover.png",
+    techStack: ["React", "Tailwind CSS", "Material UI", "FastAPI", "Docker"],
   },
   {
     id: 1,
@@ -57,6 +48,7 @@ export const projects = [
       "/projects/qubico/team.png",
       "/projects/qubico/partners.png"
     ],
+    link: "https://qubico.in",
     techStack: ["React", "Tailwind CSS", "Material UI"],
   },
   {
