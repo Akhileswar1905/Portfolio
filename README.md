@@ -1,4 +1,4 @@
-# Akhileswar's Portfolio
+# Akhileswar Sathivada's Portfolio
 
 Welcome to my professional portfolio! I'm a **Full Stack Developer & AI Engineer** with expertise in building modern web applications and AI/ML systems. This portfolio showcases my projects, experience, and technical skills.
 

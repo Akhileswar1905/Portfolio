@@ -9,11 +9,11 @@ export const updateMetaTags = ({
   imageUrl,
   url,
   type = 'website',
-  author = 'Akhileswar',
+  author = 'Akhileswar Sathivada',
 }) => {
   // Update title
   if (title) {
-    document.title = `${title} - Akhileswar's Portfolio`;
+    document.title = `${title} - Akhileswar Sathivada's Portfolio`;
     updateMetaTag('og:title', title);
     updateMetaTag('twitter:title', title);
   }
@@ -93,7 +93,7 @@ const updateCanonical = (url) => {
  */
 export const resetMetaTags = () => {
   updateMetaTags({
-    title: 'Akhileswar - Full Stack Developer & AI Engineer',
+    title: 'Akhileswar Sathivada - Full Stack Developer & AI Engineer',
     description: 'Full Stack Developer and AI Engineer with expertise in React, FastAPI, and Machine Learning. Currently working on AI systems and model lifecycle management at Infosys.',
     keywords: 'Full Stack Developer, AI Engineer, React, FastAPI, Machine Learning, Portfolio, Web Development',
     url: 'https://akhileswar.vercel.app',
@@ -123,7 +123,7 @@ export const projectSchema = (title, description, image, technologies) => {
     image: image,
     creator: {
       '@type': 'Person',
-      name: 'Akhileswar',
+      name: 'Akhileswar Sathivada',
       url: 'https://akhileswar.vercel.app',
     },
     keywords: technologies.join(', '),

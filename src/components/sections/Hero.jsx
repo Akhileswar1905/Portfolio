@@ -62,7 +62,7 @@ export default function Hero({ contactRef }) {
           </div>
           <div className="space-y-1 text-muted-foreground">
             <p><span className="text-primary">const</span> developer = &#123;</p>
-            <p className="pl-4">name: <span className="text-green-600 dark:text-green-400">"Akhileswar"</span>,</p>
+            <p className="pl-4">name: <span className="text-green-600 dark:text-green-400">"Akhileswar Sathivada"</span>,</p>
             <p className="pl-4">role: <span className="text-green-600 dark:text-green-400">["Full Stack", "AI Engineer"]</span>,</p>
             <p className="pl-4">skills: <span className="text-green-600 dark:text-green-400">["SFT", "Agent Eval", "Agentic AI"]</span>,</p>
             <p>&#125;;</p>

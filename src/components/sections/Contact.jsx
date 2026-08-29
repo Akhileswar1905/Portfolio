@@ -67,7 +67,7 @@ export default function Contact() {
         <p className="font-mono text-xs text-muted-foreground">
           Designed & Built by{" "}
           <a href="https://github.com/Akhileswar1905" className="text-foreground hover:text-primary transition-colors">
-            Akhileswar
+            Akhileswar Sathivada
           </a>
         </p>
       </footer>
