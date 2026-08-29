@@ -5,7 +5,7 @@ export const work = [
     company: "Infosys",
     date: "Present",
     description:
-      "Working on Agentic AI systems, supervised fine-tuning (SFT) of language models, and building agent evaluation frameworks using SWE-bench Verified, DeepSWE, and SWE Atlas QnA. Built ModelWorks — a platform for pipeline automation. Experience with NVIDIA NeMo framework.",
+      "Working on Agentic AI systems, supervised fine-tuning (SFT) of language models, and building agent evaluation frameworks using SWE-bench Verified, DeepSWE, and SWE Atlas QnA. Built ModelWorks, a platform for pipeline automation. Experience with NVIDIA NeMo framework.",
     logo: "/companies/images.jpg",
   },
   {
@@ -32,7 +32,7 @@ export const projects = [
     id: 0,
     title: "ModelWorks",
     description:
-      "An internal platform at Infosys for end-to-end AI model lifecycle — SFT training, evaluation benchmarks, vLLM inference deployment, B200 cluster monitoring, and API analytics on HPC infrastructure.",
+      "An internal platform at Infosys for end-to-end AI model lifecycle, SFT training, evaluation benchmarks, vLLM inference deployment, B200 cluster monitoring, and API analytics on HPC infrastructure.",
     images: [
       "/projects/modelworks/training.png",
       "/projects/modelworks/node-health.png",

@@ -46,7 +46,7 @@ export default function Hero({ contactRef }) {
           variants={rise}
           className="mt-6 max-w-xl text-lg text-muted-foreground leading-relaxed"
         >
-          Full-stack engineer & AI engineer — I build modern applications,
+          Full-stack engineer & AI engineer, I build modern applications,
           fine-tune models via <span className="font-medium text-foreground">SFT</span>,
           evaluate agents, and ship <span className="font-medium text-foreground">agentic systems</span> that reason.
         </motion.p>

@@ -72,14 +72,14 @@ export default function About() {
                     <p>
                       I started building modern web applications with a focus on
                       seamless UX and robust backends. Over time, my work expanded
-                      into <strong className="text-foreground">AI engineering</strong> — supervised
+                      into <strong className="text-foreground">AI engineering</strong>, supervised
                       fine-tuning (SFT), agent evaluation frameworks, and building
                       systems that <strong className="text-foreground">reason and act autonomously</strong>.
                     </p>
                     <p>
                       Currently at <strong className="text-foreground">Infosys</strong>,
                       I work at the intersection of full-stack development and
-                      applied AI — fine-tuning models via SFT, building agent
+                      applied AI, fine-tuning models via SFT, building agent
                       evaluation frameworks, and shipping agentic systems that
                       solve real-world problems end to end.
                     </p>
