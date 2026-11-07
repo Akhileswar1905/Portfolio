@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, BookOpen, Clock3, Search, Tag } from "lucide-react";
+import { ArrowUpRight, BookOpen, Clock3, Search, SlidersHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -31,7 +31,7 @@ function ArticleCard({ article, index }) {
         target="_blank"
         rel="noreferrer"
         aria-label={`Read ${article.title} on DEV Community`}
-        className="relative block aspect-[16/9] overflow-hidden bg-muted"
+        className="relative block aspect-[16/10] overflow-hidden bg-muted"
       >
         {article.cover_image ? (
           <img
@@ -93,6 +93,7 @@ export default function Blogs() {
   const [query, setQuery] = useState("");
   const [activeTag, setActiveTag] = useState("all");
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
+  const [mobileIndex, setMobileIndex] = useState(0);
   const [status, setStatus] = useState("loading");
 
   useEffect(() => {
@@ -186,8 +187,8 @@ export default function Blogs() {
           </a>
         </motion.div>
 
-        <motion.div variants={rise} className="flex flex-col gap-3 md:flex-row">
-          <label className="relative flex-1">
+        <motion.div variants={rise} className="flex flex-col gap-3 sm:flex-row">
+          <label className="relative min-w-0 flex-1">
             <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
             <input
               value={query}
@@ -200,26 +201,23 @@ export default function Blogs() {
               className="h-11 w-full rounded-lg border border-border bg-card pl-11 pr-4 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary/50"
             />
           </label>
-          <div className="flex items-center gap-2 overflow-x-auto pb-1">
-            <Tag className="size-4 shrink-0 text-muted-foreground" />
-            <button
-              type="button"
-              onClick={() => { setActiveTag("all"); setVisibleCount(PAGE_SIZE); }}
-              className={`shrink-0 rounded-full border px-3 py-2 text-xs transition-colors ${activeTag === "all" ? "border-primary bg-primary text-primary-foreground" : "border-border text-muted-foreground hover:border-primary/40"}`}
+          <label className="relative flex h-11 w-full items-center gap-2 rounded-lg border border-border bg-card px-3 text-sm sm:w-52">
+            <SlidersHorizontal className="size-4 shrink-0 text-muted-foreground" />
+            <span className="sr-only">Filter by topic</span>
+            <select
+              value={activeTag}
+              onChange={(event) => {
+                setActiveTag(event.target.value);
+                setVisibleCount(PAGE_SIZE);
+              }}
+              aria-label="Filter articles by topic"
+              className="h-full min-w-0 flex-1 appearance-none bg-transparent pr-5 text-sm outline-none"
             >
-              All topics
-            </button>
-            {tags.map((tag) => (
-              <button
-                key={tag}
-                type="button"
-                onClick={() => { setActiveTag(tag); setVisibleCount(PAGE_SIZE); }}
-                className={`shrink-0 rounded-full border px-3 py-2 text-xs transition-colors ${activeTag === tag ? "border-primary bg-primary text-primary-foreground" : "border-border text-muted-foreground hover:border-primary/40"}`}
-              >
-                #{tag}
-              </button>
-            ))}
-          </div>
+              <option value="all">All topics</option>
+              {tags.map((tag) => <option key={tag} value={tag}>#{tag}</option>)}
+            </select>
+            <span className="pointer-events-none absolute right-3 text-muted-foreground">⌄</span>
+          </label>
         </motion.div>
 
         {status === "loading" && (
@@ -248,14 +246,67 @@ export default function Blogs() {
             </div>
 
             {shownArticles.length > 0 ? (
-              <motion.div
-                layout
-                className="grid gap-5 md:grid-cols-2 lg:grid-cols-3"
-              >
-                {shownArticles.map((article, index) => (
-                  <ArticleCard key={article.id} article={article} index={index} />
-                ))}
-              </motion.div>
+              <>
+                <div className="md:hidden">
+                  <div
+                    data-article-carousel
+                    className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                    onScroll={(event) => {
+                      const carousel = event.currentTarget;
+                      const slides = carousel.querySelectorAll("[data-article-slide]");
+                      const center = carousel.scrollLeft + carousel.clientWidth / 2;
+                      let closest = 0;
+                      let distance = Number.POSITIVE_INFINITY;
+                      slides.forEach((slide, index) => {
+                        const nextDistance = Math.abs(slide.offsetLeft + slide.offsetWidth / 2 - center);
+                        if (nextDistance < distance) {
+                          distance = nextDistance;
+                          closest = index;
+                        }
+                      });
+                      setMobileIndex(closest);
+                    }}
+                  >
+                    {shownArticles.map((article, index) => (
+                      <div
+                        key={article.id}
+                        data-article-slide
+                        className="w-[85vw] max-w-[420px] shrink-0 snap-center"
+                      >
+                        <ArticleCard article={article} index={index} />
+                      </div>
+                    ))}
+                  </div>
+                  {shownArticles.length > 1 && (
+                    <div className="mt-4 flex justify-center gap-2">
+                      {shownArticles.map((article, index) => (
+                        <button
+                          key={`${article.id}-dot`}
+                          type="button"
+                          aria-label={`View article ${index + 1}: ${article.title}`}
+                          onClick={() => {
+                            const carousel = document.querySelector("[data-article-carousel]");
+                            const slide = carousel?.querySelectorAll("[data-article-slide]")[index];
+                            if (carousel && slide) {
+                              carousel.scrollTo({
+                                left: slide.offsetLeft - carousel.offsetLeft,
+                                behavior: "smooth",
+                              });
+                              setMobileIndex(index);
+                            }
+                          }}
+                          className={`h-2 rounded-full transition-all duration-300 ${index === mobileIndex ? "w-6 bg-primary" : "w-2 bg-foreground/25"}`}
+                        />
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <motion.div layout className="hidden gap-5 md:grid md:grid-cols-2 lg:grid-cols-3">
+                  {shownArticles.map((article, index) => (
+                    <ArticleCard key={article.id} article={article} index={index} />
+                  ))}
+                </motion.div>
+              </>
             ) : (
               <div className="rounded-xl border border-dashed border-border px-6 py-12 text-center text-sm text-muted-foreground">
                 No articles match that search. Try another keyword or topic.
