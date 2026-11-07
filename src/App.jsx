@@ -133,7 +133,7 @@ export default function App() {
 
       {/* ── Content ── */}
       <main className="mx-auto max-w-6xl px-5 pt-20 sm:px-8">
-        <div ref={refs.home}><Hero contactRef={refs.Contact} /></div>
+        <div ref={refs.home}><Hero contactRef={refs.Contact} projectsRef={refs.Projects} /></div>
         <div ref={refs.About}><About /></div>
         <div ref={refs.Projects}><Projects /></div>
         <div ref={refs.Experience}><Experience /></div>
