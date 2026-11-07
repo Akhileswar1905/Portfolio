@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Linkedin, Terminal } from "lucide-react";
+import { ArrowRight, Terminal } from "lucide-react";
+import { IoLogoGithub, IoLogoLinkedin } from "react-icons/io";
 
 const stagger = {
   visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.25 } },
@@ -11,8 +12,8 @@ const rise = {
 };
 
 const profileLinks = [
-  { label: "GitHub", href: "https://github.com/Akhileswar1905", icon: Github },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/sathivada-akhileswar-243b66237/", icon: Linkedin },
+  { label: "GitHub", href: "https://github.com/Akhileswar1905", icon: IoLogoGithub },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/sathivada-akhileswar-243b66237/", icon: IoLogoLinkedin },
 ];
 
 export default function Hero({ contactRef, projectsRef }) {
