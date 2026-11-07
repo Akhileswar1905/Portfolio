@@ -312,6 +312,38 @@ export default function CaseStudies() {
           </div>
         </motion.article>
 
+        <motion.section
+          variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55 } } }}
+          className="relative overflow-hidden rounded-2xl border border-cyan-200/15 bg-[#0b1424] px-6 py-7 text-white shadow-lg shadow-slate-950/10 sm:px-8 sm:py-8"
+        >
+          <div className="pointer-events-none absolute -right-16 -top-24 size-72 rounded-full bg-cyan-400/10 blur-3xl" />
+          <div className="relative">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <p className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-cyan-200">The impact</p>
+              <span className="rounded-full border border-white/15 bg-white/[0.06] px-3 py-1 font-mono text-[0.6rem] tracking-wider text-slate-300">ENGINEERING OUTCOMES</span>
+            </div>
+            <h3 className="mt-3 max-w-2xl font-display text-2xl font-semibold leading-tight sm:text-3xl">
+              From fragmented ML operations to a repeatable, observable workflow.
+            </h3>
+            <div className="mt-7 grid gap-6 sm:grid-cols-3 sm:gap-5">
+              {[
+                ["01", "A repeatable model lifecycle", "Training, checkpoint conversion and evaluation coordinated through reusable Dagster jobs."],
+                ["02", "Safer use of shared compute", "Slurm cancellation handling, GPU visibility and a human checkpoint gate help teams manage scarce cluster capacity."],
+                ["03", "More accessible infrastructure", "A self-service platform gives teams pipeline creation, job visibility and cost context without relying on direct cluster access."],
+              ].map(([number, title, detail]) => (
+                <div key={number} className="border-t border-white/15 pt-4">
+                  <p className="font-mono text-xs text-cyan-200/70">{number}</p>
+                  <h4 className="mt-2 font-medium text-white">{title}</h4>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-300">{detail}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-6 border-t border-white/10 pt-4 text-xs leading-relaxed text-slate-400">
+              Outcomes are described qualitatively; performance and adoption metrics will be added only when verified.
+            </p>
+          </div>
+        </motion.section>
+
         <motion.div
           variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.5 } } }}
           className="grid gap-3 sm:grid-cols-3"
