@@ -17,7 +17,7 @@ const socials = [
 export default function Contact() {
   return (
     <section className="relative py-28">
-      <span className="section-number">04</span>
+      <span className="section-number">05</span>
 
       <motion.div
         initial="hidden"
@@ -27,7 +27,7 @@ export default function Contact() {
         className="space-y-12"
       >
         <motion.div variants={rise} className="max-w-xl">
-          <p className="font-mono text-xs text-primary">04 / Contact</p>
+          <p className="font-mono text-xs text-primary">05 / Contact</p>
           <h2 className="mt-2 font-display text-4xl font-bold md:text-5xl">
             Let's work together
           </h2>
