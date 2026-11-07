@@ -207,94 +207,145 @@ export default function CaseStudies() {
 
   return (
     <section className="relative py-28">
-      <span className="section-number">03</span>
+      <span className="section-number">04</span>
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial="hidden"
+        whileInView="visible"
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
         className="space-y-10"
       >
-        <div>
-          <p className="font-mono text-xs text-primary">03 / Deep dives</p>
-          <h2 className="mt-2 font-display text-4xl font-bold md:text-5xl">Case studies</h2>
-          <p className="mt-3 max-w-2xl text-muted-foreground">
-            A closer look at the problems, architecture and engineering decisions behind selected work.
-          </p>
-        </div>
+        <motion.div
+          variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
+          className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between"
+        >
+          <div>
+            <p className="font-mono text-xs text-primary">04 / Behind the build</p>
+            <h2 className="mt-2 font-display text-4xl font-bold md:text-5xl">Case studies</h2>
+            <p className="mt-3 max-w-xl text-muted-foreground">
+              Deep dives into the systems, decisions and engineering behind complex projects.
+            </p>
+          </div>
+          <span className="hidden font-mono text-xs tracking-widest text-muted-foreground sm:block">SELECTED DEEP DIVE · 01</span>
+        </motion.div>
 
-        <div className="overflow-hidden rounded-2xl border border-border bg-card">
-          <div className="grid md:grid-cols-[0.95fr_1.05fr]">
-            <div className="relative flex min-h-64 flex-col justify-between overflow-hidden bg-[#101827] p-6 text-white sm:p-8">
-              <div className="absolute -right-16 -top-16 size-64 rounded-full border border-cyan-300/15" />
-              <div className="absolute -right-5 -top-5 size-44 rounded-full border border-cyan-300/20" />
-              <div className="relative">
-                <div className="flex items-center gap-2 font-mono text-xs text-cyan-200">
-                  <span className="size-2 rounded-full bg-cyan-300" />
-                  INTERNAL MLOPS PLATFORM
+        <motion.article
+          variants={{ hidden: { opacity: 0, y: 28 }, visible: { opacity: 1, y: 0, transition: { duration: 0.65 } } }}
+          className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all duration-500 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/[0.04]"
+        >
+          <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="relative isolate flex min-h-[330px] flex-col justify-between overflow-hidden bg-[#0b1424] p-6 text-white sm:p-9 lg:min-h-[430px]">
+              <div className="pointer-events-none absolute inset-0 -z-10 opacity-70" style={{ backgroundImage: "radial-gradient(circle at 20% 20%, rgba(14,165,233,.18), transparent 34%), radial-gradient(circle at 85% 80%, rgba(99,102,241,.2), transparent 35%)" }} />
+              <div className="pointer-events-none absolute inset-0 -z-10 opacity-[0.12]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,.22) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.22) 1px, transparent 1px)", backgroundSize: "34px 34px" }} />
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200/20 bg-cyan-100/[0.07] px-3 py-1.5 font-mono text-[0.65rem] tracking-[0.14em] text-cyan-100">
+                  <span className="size-1.5 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,.9)]" />
+                  MLOPS · HPC INFRASTRUCTURE
                 </div>
-                <h3 className="mt-8 font-display text-4xl font-bold tracking-tight">ModelWorks</h3>
-                <p className="mt-2 max-w-xs text-sm text-slate-300">
-                  Automating LLM fine-tuning and evaluation on shared GPU infrastructure.
+                <h3 className="mt-8 font-display text-5xl font-bold tracking-tight sm:text-6xl">ModelWorks<span className="text-cyan-300">.</span></h3>
+                <p className="mt-3 max-w-sm text-sm leading-relaxed text-slate-300 sm:text-base">
+                  A self-service control plane for fine-tuning, checkpoint conversion and LLM evaluation on shared GPU clusters.
                 </p>
               </div>
-              <div className="relative mt-10 flex flex-wrap gap-2">
-                {["Dagster", "Slurm", "NeMo", "FastAPI"].map((tag) => (
-                  <span key={tag} className="rounded-full border border-white/15 bg-white/5 px-3 py-1 font-mono text-[0.68rem] text-slate-200">{tag}</span>
-                ))}
+
+              <div className="mt-10">
+                <p className="mb-3 font-mono text-[0.62rem] uppercase tracking-[0.2em] text-slate-400">The automated lifecycle</p>
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  {[
+                    ["01", "Train"], ["02", "Convert"], ["03", "Evaluate"],
+                  ].map(([number, label], index) => (
+                    <div key={label} className="flex min-w-0 flex-1 items-center gap-1.5 sm:gap-2">
+                      <div className="min-w-0 flex-1 rounded-lg border border-white/10 bg-white/[0.06] px-2 py-3 backdrop-blur-sm sm:px-3">
+                        <p className="font-mono text-[0.58rem] text-cyan-200/70">{number}</p>
+                        <p className="mt-1 truncate text-xs font-medium sm:text-sm">{label}</p>
+                      </div>
+                      {index < 2 && <ArrowUpRight className="size-3 shrink-0 text-cyan-200/60" />}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
-            <div className="flex flex-col justify-between gap-7 p-6 sm:p-8">
+            <div className="flex flex-col justify-between gap-7 p-6 sm:p-9">
               <div>
                 <div className="flex flex-wrap items-center gap-2">
-                  <Badge variant="secondary" className="rounded-full">Featured case study</Badge>
-                  <span className="font-mono text-xs text-muted-foreground">MAR — AUG 2026</span>
+                  <Badge variant="secondary" className="rounded-full px-3 py-1 text-[0.65rem]">Featured case study</Badge>
+                  <span className="font-mono text-[0.68rem] text-muted-foreground">MAR — AUG 2026</span>
                 </div>
-                <h3 className="mt-4 font-display text-2xl font-semibold">From manual HPC workflows to self-service ML operations</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  An orchestration-first platform for training, checkpoint conversion and 100+ benchmark
-                  tasks, paired with dashboards for cluster visibility, ROI and no-code pipeline creation.
+                <h3 className="mt-5 max-w-lg font-display text-2xl font-semibold leading-tight sm:text-3xl">
+                  Turning a fragile, manual workflow into a reliable ML pipeline.
+                </h3>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                  Built around Dagster and Slurm, ModelWorks connects distributed training with automated
+                  model conversion and a standardized evaluation harness — then makes the infrastructure
+                  observable and approachable through a web platform.
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 border-y border-border py-4 text-sm">
-                <div>
-                  <p className="text-xs text-muted-foreground">Role</p>
-                  <p className="mt-1 font-medium">Full Stack Developer & ML Engineer</p>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">Team</p>
-                  <p className="mt-1 font-medium">4 engineers</p>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">Domain</p>
-                  <p className="mt-1 font-medium">Internal MLOps</p>
-                </div>
-                <div>
-                  <p className="text-xs text-muted-foreground">Focus</p>
-                  <p className="mt-1 font-medium">LLM post-training</p>
-                </div>
+              <div className="grid grid-cols-2 gap-x-5 gap-y-5 border-y border-border py-5">
+                {[
+                  ["MY ROLE", "Full Stack Developer & ML Engineer"],
+                  ["TEAM", "4 engineers"],
+                  ["DOMAIN", "Internal MLOps"],
+                  ["SCOPE", "LLM post-training"],
+                ].map(([label, value]) => (
+                  <div key={label}>
+                    <p className="font-mono text-[0.62rem] tracking-[0.13em] text-muted-foreground">{label}</p>
+                    <p className="mt-1.5 text-sm font-medium leading-snug">{value}</p>
+                  </div>
+                ))}
               </div>
 
-              <Button onClick={() => setOpen(true)} className="w-full justify-between rounded-full">
-                Explore case study <ArrowUpRight className="size-4" />
-              </Button>
+              <div>
+                <div className="mb-4 flex flex-wrap gap-1.5">
+                  {["Python", "Dagster", "Slurm", "NeMo", "FastAPI", "vLLM"].map((tag) => (
+                    <Badge key={tag} variant="outline" className="rounded-full font-mono text-[0.63rem] font-normal">{tag}</Badge>
+                  ))}
+                  <span className="self-center px-1 text-xs text-muted-foreground">+ more</span>
+                </div>
+                <Button onClick={() => setOpen(true)} className="group/button h-11 w-full justify-between rounded-full px-5">
+                  Read the case study
+                  <ArrowUpRight className="size-4 transition-transform duration-200 group-hover/button:translate-x-0.5 group-hover/button:-translate-y-0.5" />
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
+        </motion.article>
+
+        <motion.div
+          variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.5 } } }}
+          className="grid gap-3 sm:grid-cols-3"
+        >
+          {[
+            [Workflow, "Orchestration-first", "Composable Dagster jobs and sensors"],
+            [Server, "Cluster-aware", "Slurm lifecycle and GPU visibility"],
+            [Gauge, "Self-service", "Dashboards, ROI and pipeline authoring"],
+          ].map(([Icon, title, detail]) => (
+            <div key={title} className="flex items-center gap-3 rounded-xl border border-border/70 bg-background/50 px-4 py-3">
+              <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <Icon className="size-4" />
+              </div>
+              <div className="min-w-0">
+                <p className="text-sm font-medium">{title}</p>
+                <p className="mt-0.5 text-xs text-muted-foreground">{detail}</p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
       </motion.div>
 
       <Sheet open={open} onOpenChange={setOpen}>
-        <SheetContent side="bottom" showCloseButton className="h-[92vh] max-h-[92vh] w-full gap-0 overflow-y-auto rounded-t-2xl border-border bg-background p-0">
+        <SheetContent side="bottom" showCloseButton className="h-[94vh] max-h-[94vh] w-full gap-0 overflow-y-auto rounded-t-2xl border-border bg-background p-0">
           <div className="mx-auto w-full max-w-5xl">
-            <SheetHeader className="border-b border-border px-5 py-6 pr-14 sm:px-8">
-              <p className="font-mono text-xs text-primary">CASE STUDY / 01</p>
-              <SheetTitle className="mt-1 font-display text-2xl font-bold sm:text-3xl">ModelWorks</SheetTitle>
-              <SheetDescription className="max-w-2xl">
-                Automating LLM fine-tuning, checkpoint conversion and evaluation on an HPC cluster.
-              </SheetDescription>
-            </SheetHeader>
+            <div className="sticky top-0 z-20 border-b border-border bg-background/95 backdrop-blur-xl">
+              <SheetHeader className="px-5 py-5 pr-14 sm:px-8">
+                <p className="font-mono text-xs tracking-[0.15em] text-primary">CASE STUDY / 01</p>
+                <SheetTitle className="mt-1 font-display text-2xl font-bold sm:text-3xl">ModelWorks</SheetTitle>
+                <SheetDescription className="max-w-2xl">
+                  Automating LLM fine-tuning, checkpoint conversion and evaluation on an HPC cluster.
+                </SheetDescription>
+              </SheetHeader>
+            </div>
             <div className="px-5 py-5 sm:px-8">
               <div className="flex flex-wrap gap-2">
                 {stack.map((item) => (
