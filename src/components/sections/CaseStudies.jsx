@@ -331,8 +331,6 @@ export default function CaseStudies() {
           </div>
         </motion.article>
 
-        </motion.section>
-
         <motion.div
           variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.5 } } }}
           className="grid gap-3 sm:grid-cols-3"
