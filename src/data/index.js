@@ -4,25 +4,34 @@ export const work = [
     title: "AI Engineer",
     company: "Infosys",
     date: "Present",
-    description:
-      "Working on Agentic AI systems, supervised fine-tuning (SFT) of language models, and building agent evaluation frameworks using SWE-bench Verified, DeepSWE, and SWE Atlas QnA. Built ModelWorks, a platform for pipeline automation. Experience with NVIDIA NeMo framework.",
+    highlights: [
+      "Built ModelWorks, an internal platform for automating model and training pipelines.",
+      "Work on supervised fine-tuning (SFT) workflows and agentic AI systems using NVIDIA NeMo.",
+      "Contribute to benchmark-driven agent evaluation, including SWE-bench Verified and related evaluation suites.",
+    ],
     logo: "/companies/images.jpg",
   },
   {
     id: 1,
     title: "Full Stack Developer",
-    company: "Univyn",
-    date: "Feb 2024 - Aug 2025",
-    description: "Worked as a Full-Stack Developer at Qubico, contributing to the development and maintenance of its CRM platform and corporate portfolio website. Built and enhanced features across the frontend and backend, focusing on scalable functionality, smooth user experiences, and efficient business workflows.",
+    company: "Univyn Technologies",
+    date: "Feb 2025 - Aug 2025",
+    highlights: [
+      "Contributed to Qubico, a coworking-space CRM covering member onboarding, bookings, grievances, community feeds, and associate-partner workflows.",
+      "Built and maintained frontend and backend features across the React, Express, and MySQL stack.",
+      "Helped streamline operational workflows and improve the experience for workspace teams and members.",
+    ],
     logo: "/companies/univyn.jpg",
   },
   {
     id: 2,
-    title: "Full Stack Developer",
+    title: "Full Stack Developer Intern",
     company: "Gen Alpha Digital",
-    date: "June 2024 - Oct 2024",
-    description:
-      "Developed and maintained the company's portfolio, including the website and internal tools. Worked on various projects involving web development, database management, and API integration.",
+    date: "Aug 2024 - Oct 2024",
+    highlights: [
+      "Developed the company's portfolio website and contributed to internal web tools.",
+      "Worked across frontend development, database integration, and API-connected features.",
+    ],
     logo: "/companies/genalpha.svg",
   },
 ];
@@ -61,7 +70,6 @@ export const projects = [
     github: "https://github.com/GenAlphaDigital/Gen-Alpha-Website",
     techStack: ["Next.js", "Framer Motion", "Firebase"],
   },
-  
   {
     id: 3,
     title: "DriverSync",
@@ -72,7 +80,6 @@ export const projects = [
     github: "https://github.com/Akhileswar1905/Polygon-driver-app",
     techStack: ["React Native", "Firebase"],
   },
-  
 ];
 
 export const techStack = [
