@@ -12,9 +12,10 @@ import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Projects from "@/components/sections/Projects";
 import Experience from "@/components/sections/Experience";
+import Blogs from "@/components/sections/Blogs";
 import Contact from "@/components/sections/Contact";
 
-const NAV = ["About", "Projects", "Experience", "Contact"];
+const NAV = ["About", "Projects", "Experience", "Blogs", "Contact"];
 
 export default function App() {
   const { theme, toggle } = useTheme();
@@ -26,6 +27,7 @@ export default function App() {
     About: useRef(null),
     Projects: useRef(null),
     Experience: useRef(null),
+    Blogs: useRef(null),
     Contact: useRef(null),
   };
 
@@ -135,6 +137,7 @@ export default function App() {
         <div ref={refs.About}><About /></div>
         <div ref={refs.Projects}><Projects /></div>
         <div ref={refs.Experience}><Experience /></div>
+        <div ref={refs.Blogs}><Blogs /></div>
         <div ref={refs.Contact}><Contact /></div>
       </main>
     </div>
