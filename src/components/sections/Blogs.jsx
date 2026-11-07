@@ -195,6 +195,7 @@ export default function Blogs() {
               onChange={(event) => {
                 setQuery(event.target.value);
                 setVisibleCount(PAGE_SIZE);
+                setMobileIndex(0);
               }}
               placeholder="Search articles..."
               aria-label="Search articles"
@@ -209,6 +210,7 @@ export default function Blogs() {
               onChange={(event) => {
                 setActiveTag(event.target.value);
                 setVisibleCount(PAGE_SIZE);
+                setMobileIndex(0);
               }}
               aria-label="Filter articles by topic"
               className="h-full min-w-0 flex-1 appearance-none bg-transparent pr-5 text-sm outline-none"
