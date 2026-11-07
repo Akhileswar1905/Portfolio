@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowUpRight, Workflow, Server, Gauge, Cpu, Layers3, Terminal,
-  Activity, GitBranch, CheckCircle2, CircleDot,
+  Activity, GitBranch, CheckCircle2,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
