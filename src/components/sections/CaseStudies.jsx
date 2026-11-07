@@ -185,20 +185,6 @@ function CaseStudyDetails() {
         </ul>
       </section>
 
-      <section className="rounded-xl border border-border bg-card p-5 sm:p-6">
-        <div className="flex items-start gap-3">
-          <CircleDot className="mt-1 size-5 shrink-0 text-primary" />
-          <div>
-            <h3 className="font-display text-lg font-semibold">Impact reporting</h3>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Quantitative outcomes such as time-to-first-evaluation, GPU-hours recovered, manual
-              interventions avoided and self-service adoption are intentionally not stated here.
-              They should be added only after measurement and verification.
-            </p>
-          </div>
-        </div>
-      </section>
-
 
       <motion.section
         variants={{ hidden: { opacity: 0, y: 18 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55 } } }}
@@ -230,7 +216,7 @@ function CaseStudyDetails() {
             Outcomes are described qualitatively; performance and adoption metrics will be added only when verified.
           </p>
         </div>
-
+      </motion.section>
     </div>
   );
 }
